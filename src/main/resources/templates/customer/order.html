@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="nav/navmain" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="|Buying - ${product.details}|"></title>
+    <style>
+        #map-container {
+            width: 100%;
+            height: 0;
+            margin: 0 auto;
+            padding-top: 134.74026%;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%; /* had to specify height/width */
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body class="top-fixed">
+
+<div layout:fragment="content">
+    <div class="ae-container-fluid ae-container-fluid--inner rk-main">
+        <div style="margin-top: 2em" class="ae-grid__item item-lg-6 item-lg--offset-7">
+            <h4 class="ae-u-bolder au-mb-3 conatct__title">Product Details</h4>
+            <p class="au-mb-4 contact__desc" th:text="${product.details}"></p>
+            <a th:text="${product.name}"></a><br/>We're standing
+            by to help.
+        </div>
+        <div style="margin-top: 2em" class="ae-grid">
+
+            <div class="ae-grid__item item-lg-6">
+                <a href="#" class="rk-item rk-item--flex item-9 rk-size-8 rk-tosize-3 rk-square ">
+                    <div class="item-meta">
+                        <h2>Gentrify pork</h2>
+                        <p>Branding</p>
+                    </div>
+                </a>
+                <div style="display: inline">
+                    <h2 style="font-size: 1.35em; margin-left: 2px; margin-top: 10px;"
+                        th:text="${'Price   ' + product.price}"></h2>
+                </div>
+            </div>
+
+            <div class="ae-grid__item item-lg-6">
+                <div class="ae-grid ae-grid--collapse">
+                    <div class="ae-grid__item item-lg-12">
+
+                        <form id="contact-form" th:object="${customers}" th:action="@{/order/save}"
+                              class="ae-form--full" method="post">
+                            <input id="name" type="text"  placeholder="* Name"/>
+                            <input id="email" type="email"  placeholder="* Email"/>
+                            <input id="password" type="password"  placeholder="* Password"/>
+
+                            <textarea id="message" placeholder="Message..." cols="30"
+                                      rows="4"></textarea>
+
+                            <input id="submit" class="submit" value="submit" type="submit"/>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

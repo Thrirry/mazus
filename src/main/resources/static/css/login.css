@@ -1,0 +1,263 @@
+
+.container-login{
+
+    margin: 2em 7em 7em 7em;
+}
+
+.magento {
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.account-login {
+    color: #666;
+    font-size: 13px;
+    padding-bottom: 60px;
+    overflow: hidden;
+    width: 1440px;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0;
+    border: 0;
+
+    font: inherit;
+    vertical-align: baseline;
+}
+
+form, input, textarea, select, button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    font: inherit;
+    vertical-align: baseline;
+    display: block;
+}
+
+input[type="hidden"], input[type="image"], input[type="file"] {
+    -webkit-appearance: initial;
+    background-color: initial;
+    padding: initial;
+    border: initial;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 11px system-ui;
+}
+
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+
+form .fieldset {
+    font-size: 13px;
+}
+
+.col2-set {
+    overflow: hidden;
+}
+
+.col2-set .col-1, .col2-set .col-2 {
+    width: 700px;
+}
+
+.col2-set .col-1, .col2-set .col-2 {
+    float: left;
+    margin: 0 10px;
+    width: 580px;
+}
+
+form .fieldset h2 {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.account-login p {
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.account-login .form-list {
+    width: 340px;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+form .form-list li {
+    margin-bottom: 10px;
+}
+
+form .form-list li label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+form .form-list li label em {
+    display: block;
+    float: left;
+    padding-right: 6px;
+}
+
+form .form-list .control {
+    overflow: hidden;
+}
+
+form .form-list li {
+    margin-bottom: 10px;
+}
+
+.account-login p.required {
+    display: none;
+}
+
+.account-login p {
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+p.required {
+    color: #999;
+    font-size: 12px;
+}
+
+script {
+    display: none;
+}
+
+.account-login .form-list {
+    width: 340px;
+}
+
+.col2-set .col-1, .col2-set .col-2 {
+    width: 700px;
+}
+
+.col2-set .col-1, .col2-set .col-2 {
+    float: left;
+    margin: 0 10px;
+    width: 580px;
+}
+
+.account-login .form-list input[type=text], .account-login .form-list input[type=tel], .account-login .form-list input[type=email], .account-login .form-list input[type=password] {
+    width: 330px;
+}
+
+form .form-list input[type=text], form .form-list input[type=tel], form .form-list input[type=email], form .form-list input[type=password] {
+    background: #e5e5e5;
+    border: 0;
+    color: #111;
+    margin: 0;
+    padding: 5px;
+}
+
+form .form-list .control .input-box {
+    float: left;
+    margin-right: 6px;
+}
+
+.account-login .form-list {
+    width: 340px;
+}
+
+.account-login .note {
+    float: right;
+    line-height: 46px;
+    padding-top: 20px;
+}
+
+.account-login a {
+    color: #666;
+    text-decoration: none;
+}
+
+.account-login .buttons-set {
+    padding-top: 20px;
+}
+
+.buttons-set {
+    overflow: hidden;
+}
+
+.buttons-set button, .buttons-set .button {
+    background: #111;
+    border: 0;
+    color: #fff;
+    display: block;
+    float: left;
+    font-weight: bold;
+    line-height: 1em;
+    margin: 0;
+    padding: 14px 24px;
+    border-radius: 0px;
+    text-decoration: none;
+}
+
+.span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+}

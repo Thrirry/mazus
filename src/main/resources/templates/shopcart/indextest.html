@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.springframework.org/schema/data/jaxb"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mazus - Login</title>
+    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="../../static/css/dashboard.css" th:href="@{/css/dashboard.css}"/>
+    <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
+    <link rel="icon" type="image/svg" href= "../../static/image/urku-ico.svg" th:href="@{/image/urku-ico.svg}"/>
+</head>
+<body>
+<header class="ae-container-fluid ae-container-fluid--full rk-header ">
+    <div class="ae-container-fluid rk-topbar">
+        <h1 style="text-align: center" class="rk-logo"><img style="height: 2em"  alt="" src="image/makecode.svg"/></h1>
+    </div>
+</header>
+
+
+<div class="container-login">
+
+    <div class="magento">
+        <div class="account-login">
+            <div class="page-title">
+                <h1> Login or Create an Account </h1>
+            </div>
+
+            <form action="#" method="post" id="login-form">
+                <input name="form_key" type="hidden" value="Ao1W38O8E6M5mr1k"/>
+                <div class="fieldset">
+                    <div class="col2-set">
+                        <div class="col-1 registered-users">
+                            <h2 class="legend">Signin Customers</h2>
+                            <p></p>
+                            <ul class="form-list">
+                                <li>
+                                    <label for="email" class="required"><em>*</em>Email Address</label>
+                                    <div class="input-box">
+                                        <input name="login[username]" value="" id="email" type="email"
+                                               class="input-text required-entry validate-email" title="Email Address"
+                                               autocorrect="off" autocapitalize="off"/>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="pass" class="required"><em>*</em>Password</label>
+                                    <div class="input-box">
+                                        <input name="login[password]" type="password"
+                                               class="input-text required-entry validate-password" id="pass"
+                                               title="Password" autocorrect="off" autocapitalize="off"/>
+                                    </div>
+                                </li>
+                                <li id="remember-me-box" class="control">
+                                    <div class="input-box">
+                                        <input type="checkbox" name="persistent_remember_me" class="checkbox"
+                                               id="remember_mehFUHC9AoVT" checked="checked" title="Remember Me"/>
+                                    </div>
+                                    <label for="remember_mehFUHC9AoVT">Remember Me</label>
+
+                                </li>
+                            </ul>
+                            <p class="required">* Required Fields</p>
+
+
+                            <div class="form-list">
+                                <div class="note">
+                                    <a href="#">Forgot Your
+                                        Password?</a>
+                                </div>
+                                <div class="buttons-set">
+                                    <button type="submit" class="button" name="send" id="send2">
+                                        <span><span>Login</span></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-2 new-users">
+                            <h2 class="legend">New Customers</h2>
+                            <p>By creating an account with our store, you will be able to move through the checkout
+                                process
+                                faster, store multiple shipping addresses, view and track your orders in your account
+                                and
+                                more.</p>
+                            <div class="form-list">
+                                <div class="buttons-set">
+                                    <button type="button" class="button">
+                                        <span><span><a style="color: white" >Register</a></span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <script type="text/javascript">
+
+                var dataForm = new VarienForm('login-form', true);
+
+            </script>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.2.js" integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script src="../js/libs/jwt-decode.min.js"></script>
+<script src="../js/client.js"></script>
+</body>
+</html>

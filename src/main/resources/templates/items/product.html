@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="nav/navmain" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title th:text="|Mazus - ${product.details}|"></title>
+    <script type="text/javascript" src="../../static/js/productApi.js" th:src="@{js/productApi.js}"></script>
+    <link rel="stylesheet" href="../../static/css/product.css" th:href="@{/css/product.css}"/>
+
+
+    <link rel="stylesheet" href="../../static/css/aurora-pack.min.css" th:href="@{/css/aurora-pack.min.css}"/>
+    <link rel="stylesheet" href="../../static/css/aurora-theme-base.min.css" th:href="@{/css/aurora-theme-base.min.css}" />
+    <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
+    <link rel="stylesheet" href="../../static/css/aurora-button.css" th:href="@{/css/aurora-button.css}"/>
+    <link rel="icon" type="image/svg" href="../../static/image/urku-ico.svg" th:href="@{/css/urku-ico.svg}"/>
+
+
+    <base id="myBase" href="http://localhost:8080/"/>
+</head>
+<body>
+
+<div class="magento">
+    <div layout:fragment="content">
+        <div class="toolbar" style="padding-top: 50px;">
+            <div class="categories-container headroom headroom--not-top headroom--unpinned">
+                <div class="container">
+                    <div id="product-new" data-sku="1047420" data-name="Darkness of My Heart Tote Bag" data-brand="NEED"
+                         data-price="35.00">
+                        <div id="messages_product_view" class="container left-container">
+                        </div>
+                        <div class="container product-page-container">
+                            <form action="#" method="post" id="product_addtocart_form">
+                                <input name="form_key" type="hidden" value="lAzXczDuenVQxCbh"/>
+                                <input type="hidden" name="product" value="253513"/>
+                                <input type="hidden" name="related_product" id="related-products-field" value=""/>
+                                <input type="hidden" name="qty" id="qty" value="1"/>
+                                <div class="product-view">
+                                    <div class="product-media">
+                                        <ul class="product-thumbs">
+                                            <li><a href="#"><img src="../image/hp_nc_02.jpg" alt=""/></a></li>
+                                            <li><a href="#"><img src="../image/hp_nc_03.jpg" alt=""/></a></li>
+                                            <li><a href="#"><img src="../image/nc_10.jpg" alt=""/></a></li>
+                                            <li><a href="#"><img src="../image/hp_nc_05.jpg" alt=""/></a></li>
+                                            <li><a href="#"><img src="../image/hp_nc_06.jpg" alt=""/></a></li>
+                                        </ul>
+                                        <div class="product-image">
+                                            <img id="product-image" th:src="${product.imgsecond}"
+                                                 alt="Darkness of My Heart Tote Bag"/>
+                                            <div class="enlarge"><a href="#"></a></div>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="breadcrumbs" data-category="Mens/New Arrivals">
+                                            <ul>
+                                                <li class="home">
+                                                    <a href="#" title="Go to Home Page">Home</a>
+                                                    <span>/ </span>
+                                                </li>
+                                                <li class="category3">
+                                                    <a href="#/mens" title="">Mens</a>
+                                                    <span>/ </span>
+                                                </li>
+                                                <li class="category6">
+                                                    <a href="#/mens/new" title="">New Arrivals</a>
+                                                    <span>/ </span>
+                                                </li>
+                                                <li class="product">
+                                                    <strong>Darkness of My Heart Tote Bag</strong>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2 class="product-brand"><a href="/mens/brands/need">NEED</a></h2>
+
+                                        <h1 class="product-name"  th:text="${product.details}" ></h1>
+                                        <div class="product-price">
+                                            <h3><span class="price" th:text="${product.price}"></span></h3>
+                                        </div>
+
+
+
+
+                                        <div class="product-buttons-primary clearfix">
+                                            <button type="submit" title="Add to Cart" name="add_product"
+                                                    class="button btn-cart cart validation-passed">
+                                                Add to Cart
+                                            </button>
+                                        </div>
+
+                                        <div>
+
+                                        </div>
+
+                                        <div class="product-messaging">
+                                            <a class="product-messaging-details" href="/help/#rates" target="_blank">See
+                                                Details</a>
+                                            <p><strong>Free Shipping Returns</strong> <br/>Orders Over $100</p>
+                                        </div>
+                                        <div class="product-buttons-secondary clearfix">
+                                            <div class="wishlist-wrapper">
+                                                <a href="#" class="link-wishlist wishlist">Add to Wishlist</a>
+                                            </div>
+                                            <div class="product-share">
+                                                <strong>Share</strong>
+                                                <ul>
+                                                    <li><a href="#" target="_blank">Facebook</a></li>
+                                                    <li><a href="h#" target="_blank">Twitter</a></li>
+                                                    <li><a href="#" target="_blank">Pinterest</a></li>
+                                                    <li><a href="#" target="_blank">Tumblr</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-additional">
+                                            <a class="accordion-label" href="#"
+                                               data-target="description">Description</a>
+                                            <div style='font-size: 10px; padding-bottom: 2em' th:text="${product.content}"></div>
+
+                                            <a class="rates-international" href="/help/#international">View
+                                                International Rates</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                            <div class="product-crosssell">
+
+                                <div id="recommended-default" class="recommended">
+                                    <h5>Recommended</h5>
+                                    <div class="product">
+                                        <a href="/active-botanical-serum.html" title="Active Botanical Serum"><img
+                                                src="../image/hp_nc_02.jpg" alt="Active Botanical Serum"/></a>
+                                        <h3>
+                                            <a href="/active-botanical-serum.html" title="Active Botanical Serum">Active
+                                                Botanical Serum</a>
+                                        </h3>
+                                        <h4>
+                                            <a href="/mens/brands/vintners-daughter">Vintner's Daughter</a> / <span
+                                                class="price"><span class="price">$185</span></span>
+                                        </h4>
+                                    </div>
+                                    <div class="product">
+                                        <a href="/sailor-pant-2.html" title="Sailor Pant"><img src="../image/hp_nc_03.jpg"
+                                                                                               alt="Sailor Pant"/></a>
+                                        <h3>
+                                            <a href="/sailor-pant-2.html" title="Sailor Pant">Sailor Pant</a>
+                                        </h3>
+                                        <h4>
+                                            <a href="/mens/brands/jesse-kamm">Jesse Kamm</a> / <span class="price"><span
+                                                class="price">$395</span></span>
+                                        </h4>
+                                    </div>
+                                    <div class="product">
+                                        <a href="/ranger-pant-in-natural" title="Ranger Pant in Natural"><img
+                                                src="../image/hp_nc_05.jpg" alt="Ranger Pant in Natural"/></a>
+                                        <h3>
+                                            <a href="/ranger-pant-in-natural" title="Ranger Pant in Natural">Ranger
+                                                Pant in Natural</a>
+                                        </h3>
+                                        <h4>
+                                            <a href="/mens/brands/jesse-kamm">Jesse Kamm</a> / <span class="price"><span
+                                                class="price">$395</span></span>
+                                        </h4>
+                                    </div>
+                                    <div class="product">
+                                        <a href="/achilles-retro-low-in-white-black-1.html"
+                                           title="Achilles Retro Low in White/Black"><img src="../image/hp_nc_06.jpg"/></a>
+                                        <h3>
+                                            <a href="/achilles-retro-low-in-white-black-1.html"
+                                               title="Achilles Retro Low in White/Black">Achilles Retro Low in
+                                                White/Black</a>
+                                        </h3>
+                                        <h4>
+                                            <a href="/mens/brands/woman-by-common-projects">Woman by Common Projects</a>
+                                            /
+                                            <span class="price"><span class="price">$454</span></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="shipping-promo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

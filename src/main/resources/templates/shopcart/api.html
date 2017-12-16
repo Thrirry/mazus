@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Title</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/static.js" th:src="@{/js/static.js}"></script>-->
+
+    <style type="text/css">
+
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        hide-me {
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(.75);
+        }
+
+        h1 {
+        . margin-top: 0;
+            font-size: 2.4em;
+            font-weight: normal;
+            display: inline-block;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 50px 10%;
+        }
+
+        button {
+            background-color: #046380;
+            color: #FFF;
+            border: none;
+            padding: 10px 15px;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 2px 2px 0 #034154;
+            margin-bottom: 10px;
+            margin-left: 18px;
+            transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s ease-out;
+            position: relative;
+            top: -10px;
+        }
+
+        button:hover {
+            background-color: #034F66;
+        }
+
+        button:active {
+            background-color: #034154;
+            box-shadow: none;
+            position: relative;
+            top: -8px;
+            left: 2px;
+        }
+
+        p {
+            padding: 4px 0 2px 8px;
+            line-height: 1.7;
+            border-bottom: 1px dotted #DDD;
+            list-style: none;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<h2>Hi</h2>
+<ul id="orders"></ul>
+
+
+<button id="btn">Fetch Info for 3 New Animals</button>
+<div id="animal-info"></div>
+
+
+<p id="text">Hello
+    <a href="https://api.github.com/users/defeo">Pas AJAXoo</a>
+</p>
+
+<p id="text2">Hello
+    <a href="https://api.github.com/users/defeo">Id is; </a>
+</p>
+
+<p id="text3">Hello
+    <a href="https://api.github.com/users/defeo">Name is; </a>
+</p>
+
+<script type="text/javascript">
+
+    var xhr = new XMLHttpRequest();
+    var id = '';
+
+    if (id = 1) {
+
+        xhr.open('GET', 'http://localhost:8080/test/list/' + id);
+        xhr.addEventListener('load', function () {
+
+            var a = document.querySelector('#text');
+            var c = document.querySelector('#text2');
+            var b = document.querySelector('#text3');
+            var data = JSON.parse(xhr.response);
+            console.log(data);
+
+            a.textContent = data.price;
+            b.textContent = data.id;
+            c.textContent = data.name;
+
+
+        });
+    }
+    xhr.send();
+
+
+</script>
+
+</body>
+</html>

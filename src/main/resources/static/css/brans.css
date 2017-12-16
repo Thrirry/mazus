@@ -1,0 +1,52 @@
+ .container-brans{
+        width: 1440px;
+        margin: 0 auto;
+        max-width: 1440px;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        margin-left: 8em;
+        margin-right: 8em;
+    }
+
+
+    .brands-list {
+        padding: 0 10px;
+        box-sizing: border-box;
+        padding-bottom: 40px;
+        overflow: hidden;
+    }
+
+    .brands-list .col-brans {
+        font-size: 12px;
+        float: left;
+        width: 25%;
+    }
+    .brands-list .col-brans {
+        font-size: 12px;
+        float: left;
+        width: 25%;
+    }
+    .brands-list .col-brans .heading-brans {
+        font-weight: bold;
+        margin: 1em 0;
+    }
+
+    .brands-list .col-brans a {
+        col-bransor: #111;
+        display: block;
+        line-height: 1.7em;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        letter-spacing: 0.04em;
+        padding: 0;
+        border: 0;
+        size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }

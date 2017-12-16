@@ -1,0 +1,73 @@
+[{
+    "id": "nc01",
+    "name": "Dress",
+    "details": "Scarves & Gloves\n",
+    "price": "$86",
+    "size": "S / M / L",
+    "url": "scarves-gloves"
+  },
+  {
+    "id": "nc02",
+    "name": "Tops",
+    "details": "Monaco Set in Light Heather Grey",
+    "price": "$56",
+    "size": "S / M / L",
+    "url": "monaco-set-in-light-heather-grey"
+  },
+  {
+    "id": "nc03",
+    "name": "Tees",
+    "details": "Pamela Dress",
+    "price": "$52",
+    "size": "S / M / L",
+    "url": "pamela-dress"
+  },
+  {
+    "id": "nc04",
+    "name": "Sweaters",
+    "details": "Jana Sweater",
+    "price": "$45",
+    "size": "S / M / L",
+    "url": "jana-sweater"
+  },
+  {
+    "id": "nc05",
+    "name": "Outerwear",
+    "details": "Brook Wide Leg Pants",
+    "price": "$67",
+    "size": "S / M / L",
+    "url": "brook-wide-leg-pants"
+  },
+  {
+    "id": "nc06",
+    "name": "Pants",
+    "details": "Cosa Dress",
+    "price": "$23",
+    "size": "S / M / L",
+    "url": "cosa-dress"
+  },
+  {
+    "id": "nc07",
+    "name": "Shorts",
+    "details": "Faretta Blouse",
+    "price": "$98",
+    "size": "S / M / L",
+    "url": "faretta-blouse"
+  },
+  {
+    "id": "nc08",
+    "name": "Jumpsuits",
+    "details": "Penelope Straight Leg Pant",
+    "price": "$25",
+    "size": "S / M / L",
+    "url": "penelope-straight-leg-pant"
+  },
+  {
+    "id": "nc09",
+    "name": "Activewear",
+    "details": "Roxanna Pants",
+    "price": "$92",
+    "size": "S / M / L",
+    "url": "roxanna-pants"
+  }
+]

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mazuz - Make code not war</title>
+
+
+    <link rel="stylesheet" href="../../static/css/aurora-pack.min.css" th:href="@{/css/aurora-pack.min.css}"/>
+    <link rel="stylesheet" href="../../static/css/aurora-theme-base.min.css" th:href="@{/css/aurora-theme-base.min.css}"/>
+    <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
+    <link rel="stylesheet" href="../../static/css/aurora-button.css" th:href="@{/css/aurora-button.css}"/>
+    <link rel="icon" type="image/svg" href="../image/urku-ico.svg" />
+
+</head>
+<body>
+<header class="ae-container-fluid ae-container-fluid--full rk-header ">
+    <input type="checkbox" id="mobile-menu" class="rk-mobile-menu"/>
+    <label for="mobile-menu">
+        <svg>
+            <use xlink:href="assets/img/symbols.svg#bar"></use>
+        </svg>
+        <svg>
+            <use xlink:href="assets/img/symbols.svg#bar"></use>
+        </svg>
+        <svg>
+            <use xlink:href="assets/img/symbols.svg#bar"></use>
+        </svg>
+    </label>
+    <div class="ae-container-fluid rk-topbar">
+       <!-- <h1 class="rk-logo"><a href="#">DU Portfolio<sup>tm</sup></a></h1> -->
+        <h1 class="rk-logo"><img style="height: 2em" src="../image/makecode.svg" alt="" /></h1>
+
+        <nav class="rk-navigation">
+            <ul class="rk-menu">
+                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"><a th:href="@{/}" class="rk-menu__link">Home</a>
+                </li>
+                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/mazus' ? 'active':''}" ><a th:href="@{/mazus}" class="rk-menu__link">Mazus</a>
+                    <nav class="rk-menu__sub">
+                        <ul class="rk-container">
+                            <li class="rk-menu__item"><a href="#" class="rk-menu__link">Mens</a></li>
+                            <li class="rk-menu__item"><a href="#" class="rk-menu__link">Womens</a></li>
+                            <li class="rk-menu__item"><a href="#" class="rk-menu__link">Life</a></li>
+                            <li class="rk-menu__item"><a href="#" class="rk-menu__link">Gifts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </li>
+                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/blog' ? 'active':''}"><a th:href="@{/blog}" class="rk-menu__link">Blog</a>
+                </li>
+                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brans' ? 'active':''}"><a th:href="@{/brans}" class="rk-menu__link">Brands</a>
+                    <nav class="rk-menu__sub">
+                        <ul class="rk-container">
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/New Arrivals' ? 'active':''}"><a th:href="@{/brands/New Arrivals}" class="rk-menu__link">New Arrivals</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Clothing' ? 'active':''}"><a th:href="@{/brands/Clothing}" class="rk-menu__link">Clothing</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Shoes' ? 'active':''}"><a th:href="@{/brands/Shoes}" class="rk-menu__link">Shoes</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Bags' ? 'active':''}"><a th:href="@{/brands/Bags}" class="rk-menu__link">Bags</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Grooming' ? 'active':''}"><a th:href="@{/brands/Grooming}" class="rk-menu__link">Grooming</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Accessories' ? 'active':''}"><a th:href="@{/brands/Accessories}" class="rk-menu__link">Accessories</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Sale' ? 'active':''}"><a th:href="@{/brands/Sale}" class="rk-menu__link">Sale</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/brands/Brands' ? 'active':''}"><a th:href="@{/brands/Brands}" class="rk-menu__link">Brands</a></li>
+
+                        </ul>
+                    </nav>
+                </li>
+                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/pages/documentation' ? 'active':''}"><a th:href="@{/pages/documentation}" class="rk-menu__link">Pages</a>
+                    <nav class="rk-menu__sub">
+                        <ul class="rk-container">
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/pages/about' ? 'active':''}"><a th:href="@{/pages/about}" class="rk-menu__link">About</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/pages/documentation' ? 'active':''}"><a th:href="@{/pages/documentation}"
+                                                         class="rk-menu__link">Documentation</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/pages/design' ? 'active':''}"><a th:href="@{/pages/design}" class="rk-menu__link">Design
+                                Styles</a></li>
+                        </ul>
+                    </nav>
+                </li>
+                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/contact' ? 'active':''}"><a th:href="@{/contact}" class="rk-menu__link">Contact</a>
+                </li>
+
+                <li style="margin-left: 5em" th:href="@{/contact}" class="rk-menu__item">
+                    <a th:href="@{/contact}" class="rk-menu__link" >
+                        <img style="width: 18px; height: 18px;"  src="../image/shopping-cart.png" alt="" />
+                    </a>
+
+                    <nav class="rk-menu__sub">
+                        <ul class="rk-container">
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/customer/mydashboard' ? 'active':''}">
+                                <a th:href="@{/customer/mydashboard}" class="rk-menu__link">My Dashboard</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/customer/myorders' ? 'active':''}">
+                                <a th:href="@{/customer/myorders}" class="rk-menu__link">My Orders</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/customer/mywishlists' ? 'active':''}">
+                                <a th:href="@{/customer/mywishlists}" class="rk-menu__link">My Wishlists</a></li>
+                            <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/customer/login' ? 'active':''}">
+                                <a th:href="@{/customer/signin}" class="rk-menu__link">Log In</a></li>
+                        </ul>
+                    </nav>
+                </li>
+
+            </ul>
+
+
+            <form id="commentform" action="#" class="rk-search" method="post">
+                <input type="text" placeholder="Search" id="urku-search" class="rk-search-field"/>
+                <label for="urku-search">
+                    <svg>
+                        <use xlink:href="../image/symbols.svg#icon-search"></use>
+                    </svg>
+                </label>
+            </form>
+
+        </nav>
+    </div>
+</header>
+
+<div layout:fragment="content">
+</div>
+
+<div data-th-replace="footer/footer :: footer-content"></div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+
+<ul id="orders">
+
+</ul>
+
+<p>idtest: <input type="text" id="idtest" value="jonh" /></p>
+
+<p>id: <input type="text" id="id" /></p>
+
+<p>name: <input type="text" id="name" /></p>
+<p>details: <input type="text" id="details" /></p>
+<p>content: <input type="text" id="content" /></p>
+<p>price: <input type="text" id="price" /></p>
+<p>size: <input type="text" id="size" /></p>
+<p>url: <input type="text" id="url" /></p>
+<p>imgs: <input type="text" id="imgs" /></p>
+<p>imgsecond: <input type="text" id="imgsecond" /></p>
+
+
+<button id="add-order" class="btn btn-default" >Add</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        var $orders = $('#orders');
+
+        var $id = $('#id');
+        var $name = $('#name');
+        var $details = $('#details');
+        var $content = $('#content');
+        var $price = $('#price');
+        var $size = $('#size');
+        var $url = $('#url');
+        var $imgs = $('#imgs');
+        var $imgsecond = $('#imgsecond');
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/list',
+            success: function(orders){
+
+                $.each(orders, function(i, order){
+                    $orders.append('<li>name: '+ order.name +', price:' + order.price+'</li>');
+                    });
+
+
+            },
+            error: function(){
+                alert('error loading orders');
+            }
+        });
+
+        $('#add-order').on('click', function () {
+
+            var $idtest = $('#idtest');
+            var $id = $('#id');
+            var $name = $('#name');
+            var $details = $('#details');
+            var $content = $('#content');
+            var $price = $('#price');
+            var $size = $('#size');
+            var $url = $('#url');
+            var $imgs = $('#imgs');
+            var $imgsecond = $('#imgsecond');
+
+          /*  var settings = {
+
+                "async": true,
+                "crossDomain": true,
+                "url": "http://localhost:8080/list/",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Postman-Token": "e95516c0-8ecd-bd45-786a-9925aa9f67fa"
+                },
+                "processData": false,
+                "data": " {\n\"id\": \"3332\",\n\"name\": \"Outerwear3\",\n        \"details\": \"Scarves Gloves\",\n        \"content\": \"Pull-on pant from NEED in Olive. High rise. Elasticized waistband with interior adjustable drawstrings. Faux fly. Two slant pockets at front. Two welt pockets at back. Tonal stitching. Relaxed fit.\",\n        \"price\": \"$86\",\n        \"size\": \"S / M / L\",\n        \"url\": \"scarves-gloves2\",\n        \"imgs\": \"http://localhost:8080/image/nc_06.jpg\",\n        \"imgsecond\": \"http://localhost:8080/image/hp_nc_07.jpg\"\n    }"
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });*/
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://localhost:8080/list/",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Postman-Token": "bec39faf-4656-59ba-198c-d66021128495"
+                },
+                "processData": false,
+
+               // "data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + JSON.stringify($name.val()) + "  }"
+                "data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + $idtest + "  }"
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

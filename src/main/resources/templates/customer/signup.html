@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <title>Mazus - Signup</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
+    <link rel="stylesheet" href="../../static/css/dashboard.css" th:href="@{/css/dashboard.css}"/>
+    <link rel="icon" type="image/svg" thref="../../static/image/urku-ico.svg" th:href="@{/image/urku-ico.svg}"/>
+    <style type="text/css">
+        .checkmark {
+            height: 12px;
+            width: 12px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+        .container:hover input .checkmark {
+            background-color: #ccac;
+        }
+        .container input:checked .checkmark {
+            background-color: #2196F3;
+        }
+        .checkmark:after {
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header class="ae-container-fluid ae-container-fluid--full rk-header ">
+    <div class="ae-container-fluid rk-topbar">
+        <h1 style="text-align: center" class="rk-logo"><img style="height: 2em" src="../image/makecode.svg" alt="" /></h1>
+    </div>
+</header>
+
+<div class="container-login">
+    <div class="magento">
+        <div class="account-login">
+            <div class="page-title">
+                <h1>Create an Account</h1>
+            </div>
+            <form method="post">
+
+                <input name="form_key" type="hidden" value="Ao1W38O8E6M5mr1k"/>
+                <div class="fieldset">
+                    <div class="col2-set">
+                        <div class="col-1 registered-users">
+                            <h2 class="legend">Registered Customers</h2>
+                            <p>If you have an account with us, log in using your email address.</p>
+                            <ul class="form-list">
+
+                                <li>
+                                    <label  class="required"><em>*</em>Manager Name</label>
+                                    <div class="input-box">
+                                        <input id="managername" value="" type="text"
+                                               class="input-text required-entry validate-email" title="Manager Name"
+                                               autocorrect="off" autocapitalize="off"/>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label  class="required"><em>*</em>Password</label>
+                                    <div class="input-box">
+                                        <input id="managerpassword" type="password"
+                                               class="input-text required-entry validate-password"/>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label  class="required"><em>*</em>Email</label>
+                                    <div class="input-box">
+                                        <input id="manageremail" type="text"
+                                               class="input-text required-entry validate-email" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <label class="required"><em>*</em>Adress</label>
+                                    <div class="input-box">
+                                        <input id="manageradress" value="" type="text"
+                                               class="input-text required-entry validate-name" title="Manager Adress"
+                                               autocorrect="off" autocapitalize="off"/>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label  class="required"><em>*</em>Manager Phone</label>
+                                    <div class="input-box">
+                                        <input id="managerphone" value="" type="text"
+                                               class="input-text required-entry validate-name" title="Manager Phone"
+                                               autocorrect="off" autocapitalize="off"/>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label  class="required"><em>*</em>Gender</label>
+                                    <input class="checkmark" type="radio" name="managergender" value="female" /> Female
+                                    <input class="checkmark" type="radio" name="managergender" value="male" /> Male
+                                </li>
+                            </ul>
+                            <div class="form-list">
+                                <div class="note">
+                                    <a href="#">Forgot Your
+                                        Password?</a>
+                                </div>
+                                <div class="buttons-set">
+                                    <button type="submit" class="button" name="signup">
+                                        <span><span><a id="sign-up">Register</a></span></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 new-users">
+                            <h2 class="legend">Login</h2>
+                            <p>By creating an account with our store, you will be able to move through the checkout
+                                process
+                                faster, store multiple shipping addresses, view and track your orders in your account
+                                and
+                                more.</p>
+                            <div class="form-list">
+                                <div class="buttons-set">
+                                    <button type="button" class="button" >
+                                        <span><span><a style="color: white" href="/customer/login">Login</a></span></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $('#sign-up').on('click', function () {
+
+            var $id = "";
+            var $managername = $('#managername');
+            var $managerpassword = $('#managerpassword');
+            var $manageremail = $('#manageremail');
+            var $manageradress = $('#manageradress');
+            var $managerphone = $('#managerphone');
+
+
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://localhost:8080/api/customer",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Postman-Token": "10f6ec10-442f-b3ad-6213-356e493f712f"
+                },
+                "processData": false,
+                "data": " {" +  "  \"managername\":" + JSON.stringify($managername.val()) + "   }"
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                alert("Congratulations! You've finished Sign Up");
+            });
+
+
+
+         /*
+         ",  \"manageremail\":" + JSON.stringify($manageremail.val()) + ", \"managerpassword\":" + $managerpassword + ", \"manageradress\":" + + ", \"managerphone\":" + $managerphone +
+         var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://localhost:8080/api/customer",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "Postman-Token": "bec39faf-4656-59ba-198c-d66021128495"
+                },
+                "processData": false,
+
+                "data": " {  " +    " \"managername\":" +  $$managername.val()  +    ",        \"name\":" + JSON.stringify($name.val()) + "  }"
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });*/
+
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

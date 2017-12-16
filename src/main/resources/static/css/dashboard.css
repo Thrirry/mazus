@@ -1,0 +1,210 @@
+header {
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+}
+
+header .primary {
+    padding: 0 10px;
+    box-sizing: border-box;
+
+
+}
+header .primary li {
+    line-height: 18px;
+    margin-right: 20px;
+}
+
+header li {
+    color: #111;
+    display: inline-block;
+    font-size: 14px;
+}
+
+header .primary a {
+    color: #8C8A8A;
+    display: block;
+    padding: 17px 0 16px 0;
+    text-decoration: none;
+}
+header .primary a:hover {
+    color: #8C8A8A;
+    display: block;
+    padding: 17px 0 16px 0;
+    text-decoration: underline;
+}
+
+.container, .col2-left-layout, .account-login, .newsletter-banner-container {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 1200px;
+}
+
+.magento {
+    background: #fff;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+div span li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.col2-left-layout {
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.container, .col2-left-layout, .account-login, .newsletter-banner-container {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 1200px;
+}
+
+.col2-left-layout .col-left {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.col2-left-layout .col-left .block-title {
+    border-bottom: 1px solid #f1f1f1;
+    color: #8d8d8d;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 40px 0;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.col2-left-layout .col-left .block-title strong {
+    font-weight: bold;
+}
+
+.col2-left-layout .col-left .block-content ul {
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
+
+.col2-left-layout .col-left .block-content li {
+    line-height: 1.6em;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b, th {
+    font-weight: normal;
+}
+
+.col2-left-layout .col-left .block-content li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.col2-left-layout .col-left .block-content li a:hover {
+    color: #666;
+    text-decoration: underline;
+    vertical-align: baseline;
+}
+
+.col2-left-layout .col-main {
+    float: right;
+    width: 75%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.my-account {
+    font-size: 13px;
+}
+
+.col2-left-layout .col-main .page-title h1 {
+    margin: 40px 0;
+}
+
+.page-title h1 {
+    border-bottom: 1px solid #f1f1f1;
+    color: #8d8d8d;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 40px 10px;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.customer-account-index .dashboard .welcome-msg h2 {
+    color: #666;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.sub-title {
+    color: #111;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 30px 0;
+}
+
+.customer-account-index .dashboard .welcome-msg p {
+    line-height: 1.4em;
+}
+
+.col2-set {
+    overflow: hidden;
+}
+
+.box-title {
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.my-account a {
+    color: #111;
+}
+
+.box-title a {
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box-content {
+    line-height: 1.4em;
+}
+
+.customer-account-index .col2-set .col-1 {
+    margin: 0;
+    width: 50%;
+}
+
+.customer-account-index .col2-set .col-2 {
+    margin: 0;
+    width: 50%;
+}
+
+.col2-set .col-2 {
+    float: left;
+    width: 580px;
+}
+
+.col2-set .col-1 .col2-set .col-2 {
+    float: left;
+    margin: 0 10px;
+    width: 580px;
+}
+
+.col2-set {
+    overflow: hidden;
+}
