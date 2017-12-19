@@ -1,13 +1,23 @@
 
 $(function () {
 
-    var TOKEN_KEY = "jwtToken";
+    var TOKEN_KEY = "jwtToken"
     var $notLoggedIn = $("#notLoggedIn");
     var $loggedIn = $("#loggedIn").hide();
     var $loggedInBody = $("#loggedInBody");
     var $response = $("#response");
     var $login = $("#login");
     var $userInfo = $("#userInfo").hide();
+    var $userInfow = $('#userInfow').hide();
+    var $loginbefor = $('#loginbefor');
+    var $addordercover = $('#addordercover');
+
+    var $addorder = $('#addorder');
+
+    var $addordercoverbef = $('#addordercoverbef');
+    $addordercover.hide();
+
+    var $nnamecustomer = $('#nnamecustomer');
 
 
     function getJwtToken() {
@@ -33,11 +43,18 @@ $(function () {
                 setJwtToken(data.token);
                 $login.hide();
                 $notLoggedIn.hide();
+                $loginbefor.hide();
                 showTokenInformation();
                 showUserInformation();
+                showUserInformationNavmain();
+                CartButton();
+                getUsername();
+
+                $addordercoverbef.hide();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                if (jqXHR.status === 401) {
+
+                if (jqXHR.status === 403) {
                     $('#loginErrorModal')
                         .modal("show")
                         .find(".modal-body")
@@ -49,6 +66,7 @@ $(function () {
             }
         });
     }
+
 
     function doLogout() {
         removeJwtToken();
@@ -82,6 +100,7 @@ $(function () {
 
                 $userInfoBody.append($("<div>").text("Username: " + data.username));
                 $userInfoBody.append($("<div>").text("Email: " + data.email));
+                $userInfoBody.append($("<div>").text("Pass: " + data.lastname));
 
                 var $authorityList = $("<ul>");
                 data.authorities.forEach(function (authorityItem) {
@@ -92,7 +111,63 @@ $(function () {
 
                 $userInfoBody.append($authorities);
                 $userInfo.show();
+
             }
+        });
+    }
+
+
+
+    function showUserInformationNavmain() {
+        $.ajax({
+            url: "/user",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            headers: createAuthorizationTokenHeader(),
+            success: function (data, textStatus, jqXHR) {
+                var $userInfoBodys = $userInfow.find("#userlogged");
+
+                $userInfoBodys.append($("<p>").text("Hi, " +data.username));
+                $userInfow.show();
+
+            }
+        });
+    }
+
+
+    function CartButton() {
+        $.ajax({
+            url: "/user",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            headers: createAuthorizationTokenHeader(),
+            success: function (data, textStatus, jqXHR) {
+
+                var $userInfoBodys = $addordercover.find("#addorder");
+                $userInfoBodys.append($("<span>").text("Add to Card"));
+                $addordercover.show();
+
+            }
+        });
+    }
+
+
+    function getUsername() {
+        $.ajax({
+            url: "/user",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            headers: createAuthorizationTokenHeader(),
+            success: function (data, textStatus, jqXHR) {
+
+                var $userInfoBodys = $nnamecustomer.find("#namecustomer");
+                $userInfoBodys.append($("<input id='customersname' style='display: none' value='"+ data.username +"'>"));
+                $nnamecustomer.show();
+
+                }
         });
     }
 
@@ -183,11 +258,17 @@ $(function () {
             .toggleClass("text-shown");
     });
 
-    // INITIAL CALLS =============================================================
     if (getJwtToken()) {
         $login.hide();
         $notLoggedIn.hide();
+        $loginbefor.hide();
         showTokenInformation();
         showUserInformation();
+        showUserInformationNavmain();
+
+        CartButton();
+        getUsername();
+
+        $addordercoverbef.hide();
     }
 });

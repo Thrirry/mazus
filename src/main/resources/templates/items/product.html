@@ -6,21 +6,17 @@
 <head>
 
     <title th:text="|Mazus - ${product.details}|"></title>
-    <script type="text/javascript" src="../../static/js/productApi.js" th:src="@{js/productApi.js}"></script>
+
     <link rel="stylesheet" href="../../static/css/product.css" th:href="@{/css/product.css}"/>
-
-
     <link rel="stylesheet" href="../../static/css/aurora-pack.min.css" th:href="@{/css/aurora-pack.min.css}"/>
-    <link rel="stylesheet" href="../../static/css/aurora-theme-base.min.css" th:href="@{/css/aurora-theme-base.min.css}" />
+    <link rel="stylesheet" href="../../static/css/aurora-theme-base.min.css"
+          th:href="@{/css/aurora-theme-base.min.css}"/>
     <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
     <link rel="stylesheet" href="../../static/css/aurora-button.css" th:href="@{/css/aurora-button.css}"/>
     <link rel="icon" type="image/svg" href="../../static/image/urku-ico.svg" th:href="@{/css/urku-ico.svg}"/>
 
-
-    <base id="myBase" href="http://localhost:8080/"/>
 </head>
 <body>
-
 <div class="magento">
     <div layout:fragment="content">
         <div class="toolbar" style="padding-top: 50px;">
@@ -31,7 +27,7 @@
                         <div id="messages_product_view" class="container left-container">
                         </div>
                         <div class="container product-page-container">
-                            <form action="#" method="post" id="product_addtocart_form">
+                            <div id="product_addtocart_form">
                                 <input name="form_key" type="hidden" value="lAzXczDuenVQxCbh"/>
                                 <input type="hidden" name="product" value="253513"/>
                                 <input type="hidden" name="related_product" id="related-products-field" value=""/>
@@ -72,24 +68,42 @@
                                             </ul>
                                         </div>
                                         <h2 class="product-brand"><a href="/mens/brands/need">NEED</a></h2>
-
-                                        <h1 class="product-name"  th:text="${product.details}" ></h1>
+                                        <h1 class="product-name" th:value="${product.details}"
+                                            th:text="${product.details}"></h1>
                                         <div class="product-price">
                                             <h3><span class="price" th:text="${product.price}"></span></h3>
                                         </div>
 
-
-
-
-                                        <div class="product-buttons-primary clearfix">
-                                            <button type="submit" title="Add to Cart" name="add_product"
-                                                    class="button btn-cart cart validation-passed">
-                                                Add to Cart
+                                        <div id="addordercoverbef" class="product-buttons-primary clearfix">
+                                            <button title="You need Login"
+                                                    class="button btn-cart cart validation-passed"
+                                                    style="cursor: not-allowed; opacity: 0.9"> You need Login
                                             </button>
                                         </div>
 
-                                        <div>
 
+                                        <div id="addordercover" class="product-buttons-primary clearfix">
+                                            <button id="addorder" title="Add to Cart"
+                                                    class="button btn-cart cart validation-passed">
+
+                                            </button>
+                                        </div>
+
+                                        <div style="text-align: center; font-size: 16px; margin-top: 6em;" id="messages">
+                                            <a href="/customer/dashboard" id="message-body"></a>
+                                        </div>
+
+
+                                        <input style="display: none" type="text" id="details"
+                                               th:value="${product.details}"/>
+                                        <input style="display: none" type="text" id="idproduct"
+                                               th:value="${product.id}"/>
+                                        <div id="nnamecustomer" style="display: none;">
+                                            <a style="display: none" type="text" id="namecustomer"></a>
+                                        </div>
+                                        <input style="display: none" type="text" id="price"
+                                               th:value="${product.price}"/>
+                                        <div>
                                         </div>
 
                                         <div class="product-messaging">
@@ -105,7 +119,7 @@
                                                 <strong>Share</strong>
                                                 <ul>
                                                     <li><a href="#" target="_blank">Facebook</a></li>
-                                                    <li><a href="h#" target="_blank">Twitter</a></li>
+                                                    <li><a href="#" target="_blank">Twitter</a></li>
                                                     <li><a href="#" target="_blank">Pinterest</a></li>
                                                     <li><a href="#" target="_blank">Tumblr</a></li>
 
@@ -115,7 +129,8 @@
                                         <div class="product-additional">
                                             <a class="accordion-label" href="#"
                                                data-target="description">Description</a>
-                                            <div style='font-size: 10px; padding-bottom: 2em' th:text="${product.content}"></div>
+                                            <div style='font-size: 13px; padding-bottom: 2em'
+                                                 th:text="${product.content}"></div>
 
                                             <a class="rates-international" href="/help/#international">View
                                                 International Rates</a>
@@ -123,8 +138,7 @@
                                     </div>
                                 </div>
 
-
-                            </form>
+                            </div>
                             <div class="product-crosssell">
 
                                 <div id="recommended-default" class="recommended">
@@ -142,8 +156,9 @@
                                         </h4>
                                     </div>
                                     <div class="product">
-                                        <a href="/sailor-pant-2.html" title="Sailor Pant"><img src="../image/hp_nc_03.jpg"
-                                                                                               alt="Sailor Pant"/></a>
+                                        <a href="/sailor-pant-2.html" title="Sailor Pant"><img
+                                                src="../image/hp_nc_03.jpg"
+                                                alt="Sailor Pant"/></a>
                                         <h3>
                                             <a href="/sailor-pant-2.html" title="Sailor Pant">Sailor Pant</a>
                                         </h3>
@@ -187,7 +202,48 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../js/client.js"></script>
+
+        <script language="JavaScript" type="text/javascript">
+            $(function () {
+                var $orders = $('#orders');
+                var $messages = $('#messages');
+
+                $('#addorder').on('click', function () {
+
+                    var $nameproduct = $('#details');
+                    var $id = $('#idproduct');
+                    var $price = $('#price');
+                    var $customersname = $('#customersname');
+
+
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "http://localhost:8080/ordered/",
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Cache-Control": "no-cache",
+                            "Postman-Token": "18c7d8ba-ae1e-cbc8-93ca-b78e2960f08f"
+                        },
+                        "processData": false,
+                        "data": " {  " + " \"nameproduct\":" + JSON.stringify($nameproduct.val()) + ", \"idproduct\":" + JSON.stringify($id.val()) + ", \"price\":" + JSON.stringify($price.val()) + ", \"nameCustomer\":" + JSON.stringify($customersname.val()) + "  }"
+                    };
+                    $.ajax(settings).done(function (response) {
+
+                            var $userInfoBodys = $messages.find("#message-body");
+                            $userInfoBodys.append($("<p>\Order finish! Check your Cart\</p>"));
+                            $messages.show();
+
+                    });
+                });
+            });
+        </script>
     </div>
+
 </div>
 </body>
 </html>

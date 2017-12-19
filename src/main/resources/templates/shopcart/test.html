@@ -14,6 +14,7 @@
 
 </ul>
 
+//<p id="txt">This is some</p>
 <p>idtest: <input type="text" id="idtest" value="jonh" /></p>
 
 <p>id: <input type="text" id="id" /></p>
@@ -37,7 +38,6 @@
     $(function(){
 
         var $orders = $('#orders');
-
         var $id = $('#id');
         var $name = $('#name');
         var $details = $('#details');
@@ -77,6 +77,8 @@
             var $imgs = $('#imgs');
             var $imgsecond = $('#imgsecond');
 
+            var $txt = $('#txt').text;
+
           /*  var settings = {
 
                 "async": true,
@@ -108,8 +110,10 @@
                 },
                 "processData": false,
 
-               // "data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + JSON.stringify($name.val()) + "  }"
-                "data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + $idtest + "  }"
+              //  "data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + JSON.stringify($name.val()) + "  }"
+                //"data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + $idtest + "  }"
+
+                "data": " {  " +    " \"id\":" +  $id.val()  +    ",        \"name\":" + JSON.stringify($idtest.val()) + "  }"
             }
 
             $.ajax(settings).done(function (response) {

@@ -1,8 +1,11 @@
 package com.mazuz.config;
 
+import org.h2.server.web.WebServlet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -16,12 +19,23 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import com.mazuz.security.JwtAuthenticationEntryPoint;
 import com.mazuz.security.JwtAuthenticationTokenFilter;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+
 
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@Order(1000)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    //working with h2
+    @Bean
+    ServletRegistrationBean h2servletRegistration(){
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+        registrationBean.addUrlMappings("/console/*");
+        return registrationBean;
+    }
 
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
@@ -46,6 +60,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new JwtAuthenticationTokenFilter();
     }
 
+
+    //public void addViewControllers(ViewControllerRegistry registry) {
+      //  registry.addViewController("/error.html").setViewName("404");
+    //}
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
@@ -64,8 +83,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         HttpMethod.GET,
                         "/",
-                        "/*.html",
-                        "/",
+                        "/*",
                         "/mazus",
                         "/test",
                         "/customer/login",
@@ -85,7 +103,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.jpg",
                         "/**/*.jpeg",
                         "/**/*.png",
-                        "/**/*.js"
+                        "/**/*.js",
+                        "/test"
                 ).permitAll()
                 .antMatchers("/du/**").permitAll()
                 .anyRequest().authenticated();

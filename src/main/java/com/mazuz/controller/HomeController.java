@@ -2,6 +2,7 @@ package com.mazuz.controller;
 
 
 
+import com.mazuz.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
+    private ProductService productService;
+
+    @Autowired
+    public HomeController(ProductService productService) {
+        super();
+        this.productService = productService;
+    }
+
 
 
     @RequestMapping("/")
@@ -28,6 +38,19 @@ public class HomeController {
         return "customer/signup";
 
     }
+
+    @RequestMapping("/*")
+    public String fourzerofour(Model model) {
+        return "error/error";
+
+    }
+
+    @RequestMapping("/mazus/**")
+    public String fourzerofour2(Model model) {
+        return "error/error";
+
+    }
+
 
     @RequestMapping("/blog")
     public String blog(Model model) {
@@ -75,6 +98,25 @@ public class HomeController {
     @RequestMapping("/customer/signin")
     public String signin(Model model) {
         return "customer/signin";
+
+    }
+
+    @RequestMapping("/mazus/{url}")
+    public String view(@PathVariable(value = "url") String url, Model model) {
+        model.addAttribute("product", productService.getByUrl(url));
+        return "items/product";
+    }
+
+    //product older
+    @RequestMapping("/mazus/order/{url}")
+    public String views(@PathVariable(value = "url") String url, Model model) {
+        model.addAttribute("product", productService.getByUrl(url));
+        return "customer/order";
+    }
+
+    @RequestMapping("/testsignup")
+    public String testsignup(Model model) {
+        return "shopcart/test";
 
     }
 

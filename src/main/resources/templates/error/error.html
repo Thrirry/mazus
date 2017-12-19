@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml"  layout:decorator="nav/navmain">
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #error {
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 160px 0;
+            text-align: center;
+        }
+
+        div, h2, fieldset, h3 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1440px;
+            width: 1200px;
+        }
+
+        @media (min-width: 1480px) {
+            .container {
+                width: 1440px;
+            }
+
+            #error h2 {
+                font-size: 36px;
+                font-weight: bold;
+                line-height: 1em;
+                margin-bottom: 12px;
+            }
+
+            #error h3 {
+                font-size: 18px;
+                line-height: 1em;
+                margin-bottom: 36px;
+            }
+
+            h1, h2, h3, h4, h5, h6, strong, b, th {
+                font-weight: normal;
+            }
+
+            #error form {
+                display: inline-block;
+                width: 220px;
+            }
+
+            form, input, textarea, select, button {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                letter-spacing: 0.04em;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            #error fieldset {
+                border: 1px solid #555;
+                display: block;
+                padding: 10px 12px;
+                position: relative;
+            }
+
+            #error input[type=text] {
+                background-color: transparent;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            form, input, textarea, select, button {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                letter-spacing: 0.04em;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            #error fieldset::after {
+                color: rgb(17, 17, 17);
+                content: "→";
+                display: block;
+                position: absolute;
+                margin-top: -7px;
+                top: 50%;
+                right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="magento">
+        <div id="error">
+            <div class="container">
+                <h2>D’oh</h2>
+                <h3>We couldn’t find that page. Try searching instead.</h3>
+                <form action="#" method="get" autocomplete="off">
+                    <fieldset>
+                        <input type="text" name="q" value="Search" maxlength="128" autocomplete="off"/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
