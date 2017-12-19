@@ -11,6 +11,9 @@ $(function () {
     var $userInfow = $('#userInfow').hide();
     var $loginbefor = $('#loginbefor');
     var $addordercover = $('#addordercover');
+    var $dashboard = $('#dashboard');
+
+    $dashboard.hide();
 
     var $addorder = $('#addorder');
 
@@ -50,6 +53,8 @@ $(function () {
                 CartButton();
                 getUsername();
 
+                $dashboard.show();
+
                 $addordercoverbef.hide();
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -77,6 +82,8 @@ $(function () {
         $loggedIn.hide();
         $loggedInBody.empty();
         $notLoggedIn.show();
+
+        $dashboard.hide();
     }
 
     function createAuthorizationTokenHeader() {
@@ -223,7 +230,7 @@ $(function () {
 
     $("#exampleServiceBtn").click(function () {
         $.ajax({
-            url: "/persons",
+            url: "/mazuz",
             type: "GET",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -270,5 +277,7 @@ $(function () {
         getUsername();
 
         $addordercoverbef.hide();
+
+        $dashboard.show();
     }
 });

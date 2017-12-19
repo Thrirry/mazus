@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("protected")
 public class MethodProtectedRestController {
 
-
     @RequestMapping(method = RequestMethod.GET)
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> getProtectedGreeting() {
         return ResponseEntity.ok("Greetings from admin protected method!");
     }

@@ -34,9 +34,6 @@
 
         <nav class="rk-navigation">
             <ul class="rk-menu">
-                <li class="rk-menu__item" th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}">
-                    <a th:href="@{/}" class="rk-menu__link">Home</a>
-                </li>
                 <li class="rk-menu__item"
                     th:classappend="${#httpServletRequest.getRequestURI() == '/mazus' ? 'active':''}"><a
                         th:href="@{/mazus}" class="rk-menu__link">Mazus</a>
@@ -168,7 +165,7 @@
 
 <script src="../js/jquery-2-2.js"></script>
 <script src="../js/libs/jwt-decode.min.js"></script>
-<!--<script src="../js/client.js"></script>-->
+<script src="../js/client.js"></script>
 <script src="../js/forsignup.js"></script>
 
 <div layout:fragment="content">
