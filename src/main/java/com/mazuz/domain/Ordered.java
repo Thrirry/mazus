@@ -56,7 +56,7 @@ public class Ordered {
     }
 
     public Ordered( String nameproduct, String idproduct, String price, String nameCustomer) {
-
+        super();
         this.nameproduct = nameproduct;
         this.idproduct = idproduct;
         this.price = price;

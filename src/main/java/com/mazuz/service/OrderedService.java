@@ -82,9 +82,15 @@ public class OrderedService {
         return ordereds;
     }
 
-    public Ordered getOrdered(String id) {
-        return  orderedRepository.findOne(id);
+   // public Ordered getOrdered(String id) {
+        //return  orderedRepository.findOne(id);
+   // }
+
+    public Ordered getOrdered(String nameCustomer) {
+        return  orderedRepository.findByNameCustomer(nameCustomer);
     }
+
+
 
     public void addOrdered(Ordered ordered) {
         orderedRepository.save(ordered);
@@ -97,6 +103,10 @@ public class OrderedService {
         orderedRepository.delete(id);
     }
 
+
+   // public Ordered getByID(String id) {
+    //    return orderedRepository.findByIdproduct(id);
+  //  }
 
 
 }

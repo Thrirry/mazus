@@ -28,13 +28,13 @@ public class OrderedController {
         return orderedService.getAllOrderedSecond();
     }
 
-    @RequestMapping("/ordered/{id}")
-    public Ordered getOrdered(@PathVariable String id) {
-        return orderedService.getOrdered(id);
+    @RequestMapping(value = "/ordered/{nameCustomer}", method=RequestMethod.GET)
+    public Ordered getOrdered(@PathVariable String nameCustomer) {
+        return orderedService.getOrdered(nameCustomer);
     }
 
     @RequestMapping(method= RequestMethod.POST, value = "/ordered")
-    public void addProduct(@RequestBody Ordered ordered) {
+    public void addOrdered(@RequestBody Ordered ordered) {
         orderedService.addOrdered(ordered);
     }
 

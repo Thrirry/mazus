@@ -2,6 +2,8 @@ package com.mazuz.controller;
 
 
 
+import com.mazuz.domain.Ordered;
+import com.mazuz.service.OrderedService;
 import com.mazuz.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,13 @@ public class HomeController {
 
     private ProductService productService;
 
+    private OrderedService orderedService;
+
     @Autowired
-    public HomeController(ProductService productService) {
+    public HomeController(ProductService productService, OrderedService orderedService) {
         super();
         this.productService = productService;
+        this.orderedService = orderedService;
     }
 
 
@@ -101,11 +106,18 @@ public class HomeController {
 
     }
 
+    @RequestMapping("/checkout/cart")
+    public String checkout(Model model) {
+        return "checkout/cart";
+
+    }
+
     @RequestMapping("/mazus/{url}")
     public String view(@PathVariable(value = "url") String url, Model model) {
         model.addAttribute("product", productService.getByUrl(url));
         return "items/product";
     }
+
 
     //product older
     @RequestMapping("/mazus/order/{url}")

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="nav/navmain" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/styleforcart.css" th:href="@{/css/styleforcart.css}"/>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <ul class="checkout-types">
+                <li><p class="paypal-logo">
+                    <a data-action="checkout-form-submit" id="ec_shortcut_3d85f6c9d066a5820fd5782d364be086" href="#">
+                        <img src="../image/paypal-logo-color.svg" alt="Checkout with PayPal"
+                             title="Checkout with PayPal"/></a>
+                </p>
+                </li>
+                <li>
+                    <p class="paypal-logo">
+                        <span class="paypal-or">or</span>
+                    </p>
+                </li>
+
+                <li>
+                    <button style="margin-bottom: 1.5em" type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout">
+                        <span><span>Proceed to Checkout</span></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <form action="#" method="post">
+            <input name="form_key" type="hidden" value="NvbVLeRliQeJjmlF"/>
+            <fieldset>
+                <table id="shopping-cart-table" class="data-table cart-table">
+                    <thead>
+                    <tr class="first last">
+                        <th class="image" rowspan="1">Item</th>
+                        <th class="product-name" rowspan="1">&nbsp;</th>
+                        <th rowspan="1">Edit</th>
+                        <th rowspan="1">Quantity</th>
+                        <th class="subtotal a-center" colspan="1">Subtotal</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr class="first last">
+                        <td colspan="50" class="a-right last">
+                            <button type="submit" name="update_cart_action" value="update_qty"
+                                    title="Update Shopping Cart"
+                                    class="button btn-update"><span><span>Update Shopping Cart</span></span></button>
+                        </td>
+                    </tr>
+                    </tfoot>
+
+                    <tbody id="showCart">
+                    
+
+                    </tbody>
+                </table>
+            </fieldset>
+            <div class="shipping-promo"></div>
+        </form>
+
+
+        <div class="continue-shopping">
+            <button type="button" title="Continue Shopping" class="button btn-continue">
+                <span style="margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;"><span>Continue Shopping</span></span></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

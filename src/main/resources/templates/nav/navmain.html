@@ -3,7 +3,7 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Mazuz - Make code not war</title>
+    <title>Mazuz Co.</title>
 
 
     <link rel="stylesheet" href="../../static/css/aurora-pack.min.css" th:href="@{/css/aurora-pack.min.css}"/>
@@ -11,7 +11,7 @@
           th:href="@{/css/aurora-theme-base.min.css}"/>
     <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
     <link rel="stylesheet" href="../../static/css/aurora-button.css" th:href="@{/css/aurora-button.css}"/>
-    <link rel="icon" type="image/svg" href="../image/urku-ico.svg"/>
+    <link rel="icon" type="image/svg" href="../../image/logo.svg" th:href="@{/image/logo.svg}"/>
 
 </head>
 <body>
@@ -116,8 +116,8 @@
                     <nav class="rk-menu__sub">
                         <ul class="rk-container">
                             <li class="rk-menu__item"
-                                th:classappend="${#httpServletRequest.getRequestURI() == '/customer/mydashboard' ? 'active':''}">
-                                <a th:href="@{/customer/mydashboard}" class="rk-menu__link">My Dashboard</a></li>
+                                th:classappend="${#httpServletRequest.getRequestURI() == '/checkout/cart' ? 'active':''}">
+                                <a th:href="@{/checkout/cart}" class="rk-menu__link">My Dashboard</a></li>
                             <li class="rk-menu__item"
                                 th:classappend="${#httpServletRequest.getRequestURI() == '/customer/myorders' ? 'active':''}">
                                 <a th:href="@{/customer/myorders}" class="rk-menu__link">My Orders</a></li>
@@ -146,12 +146,10 @@
 
                             </li>
 
-
                             <!-- <div id="userInfow">
                                  <div id="userlogged">
                                  </div>
                              </div> -->
-
                         </ul>
                     </nav>
                 </li>
