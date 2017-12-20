@@ -18,7 +18,7 @@ public class JwtUser implements UserDetails {
     private final String password;
     private final String email;
     private final Collection<? extends GrantedAuthority> authorities;
-    private final boolean enabled;
+    private final boolean enabled;  //note here for customer "disable"
     private final Date lastPasswordResetDate;
 
     public JwtUser(

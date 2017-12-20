@@ -126,9 +126,9 @@ public class HomeController {
         return "customer/order";
     }
 
-    @RequestMapping("/testsignup")
+    @RequestMapping("/testsigin")
     public String testsignup(Model model) {
-        return "shopcart/test";
+        return "customer/signin";
 
     }
 
