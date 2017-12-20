@@ -133,13 +133,20 @@
 
                             <li class="rk-menu__item"
                                 th:classappend="${#httpServletRequest.getRequestURI() == '/customer/login' ? 'active':''}">
-                                <a th:href="@{/customer/signin}" class="rk-menu__link">
+                                <a th:href="@{/customer/dashboard}" class="rk-menu__link">
                                     <div id="userInfow">
                                         <div id="userlogged">
                                         </div>
                                     </div>
                                 </a>
                             </li>
+
+                            <li id="logout" class="rk-menu__item">
+                                <a href="#" style="border: none" class="rk-menu__link">Log Out</a>
+
+                            </li>
+
+
                             <!-- <div id="userInfow">
                                  <div id="userlogged">
                                  </div>

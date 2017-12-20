@@ -25,15 +25,12 @@
     </div>
 </header>
 
-
 <div class="container-login">
-
     <div class="magento">
         <div class="account-login">
             <div class="page-title">
                 <h1> Login or Create an Account </h1>
             </div>
-
             <form id="loginForm">
                 <input name="form_key" type="hidden" value="Ao1W38O8E6M5mr1k"/>
                 <div class="fieldset">
@@ -56,29 +53,13 @@
                                                class="input-text required-entry validate-password" title="Password"/>
                                     </div>
                                 </li>
-
                             </ul>
                             <p class="required">* Required Fields</p>
-
 
                             <div class="buttons-set">
                                 <button type="submit" class="button">Login</button>
                             </div>
-
                         </div>
-
-
-
-                       <div class="col-md-6">
-                           <button type="button" class="btn btn-default" id="exampleServiceBtn">call example service</button>
-                           <button type="button" class="btn btn-default" id="adminServiceBtn">call admin protected service</button>
-                            <div>
-                               <div>
-                                  <a id="response"></a>
-                               </div>
-                            </div>
-                       </div>
-
 
                         <div class="col-2 new-users">
                             <h2 class="legend">New Customers</h2>
@@ -93,44 +74,6 @@
                                         <span><span><a style="color: white"
                                                        href="signup.html">Register</a></span></span>
                                     </button>
-                                </div>
-                            </div>
-
-
-                            <div id="userInfo">
-                                <div>
-                                    <div>
-                                        <h3 style="background-color: #bce8f1; margin-top: 2em" class="panel-title">
-                                            Authenticated</h3>
-                                    </div>
-                                    <div>
-                                        <div id="userInfoBody"></div>
-                                        <div class="form-list">
-                                            <div class="buttons-set">
-                                                <button style=" margin-top: 1em; margin-bottom: 2em" type="button"
-                                                        class="button" id="logout">Logout
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- <div id="userInfow">
-                                 <div id="userlogged">
-                                 </div>
-                             </div> -->
-
-
-                            <div class="row">
-                                <div id="loggedIn">
-                                    <div>
-                                        <div>
-                                            <h3 style="background-color: #bce8f1; margin-left: 1em" class="panel-title">
-                                                This is Token information</h3>
-                                        </div>
-                                        <div class="panel-body" id="loggedInBody"></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -158,16 +101,12 @@
         </div>
     </div>
 </div>
-
 <script src="../js/jquery-2-2.js"></script>
 <script src="../js/libs/jwt-decode.min.js"></script>
 <script src="../js/forsignup.js"></script>
 
-
 <th:block layout:fragment="script">
     <script th:src="@{../js/client.js}"></script>
-
 </th:block>
-
 </body>
 </html>

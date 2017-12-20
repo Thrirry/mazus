@@ -1,17 +1,17 @@
-
 $(function () {
 
     var TOKEN_KEY = "jwtToken"
     var $notLoggedIn = $("#notLoggedIn");
     var $loggedIn = $("#loggedIn").hide();
     var $loggedInBody = $("#loggedInBody");
-    var $response = $("#response");
     var $login = $("#login");
     var $userInfo = $("#userInfo").hide();
     var $userInfow = $('#userInfow').hide();
     var $loginbefor = $('#loginbefor');
     var $addordercover = $('#addordercover');
     var $dashboard = $('#dashboard');
+    var $response = $("#response");
+    var $logout = $("#logout").hide();
 
     $dashboard.hide();
 
@@ -47,15 +47,15 @@ $(function () {
                 $login.hide();
                 $notLoggedIn.hide();
                 $loginbefor.hide();
+                $logout.show();
                 showTokenInformation();
                 showUserInformation();
                 showUserInformationNavmain();
                 CartButton();
                 getUsername();
-
                 $dashboard.show();
-
                 $addordercoverbef.hide();
+                window.location.replace("/mazus");
             },
             error: function (jqXHR, textStatus, errorThrown) {
 
@@ -82,8 +82,8 @@ $(function () {
         $loggedIn.hide();
         $loggedInBody.empty();
         $notLoggedIn.show();
-
         $dashboard.hide();
+        window.location.replace("/mazus");
     }
 
     function createAuthorizationTokenHeader() {
@@ -124,7 +124,6 @@ $(function () {
     }
 
 
-
     function showUserInformationNavmain() {
         $.ajax({
             url: "/user",
@@ -135,7 +134,7 @@ $(function () {
             success: function (data, textStatus, jqXHR) {
                 var $userInfoBodys = $userInfow.find("#userlogged");
 
-                $userInfoBodys.append($("<p>").text("Hi, " +data.username));
+                $userInfoBodys.append($("<p>").text("Hi, " + data.username));
                 $userInfow.show();
 
             }
@@ -171,10 +170,10 @@ $(function () {
             success: function (data, textStatus, jqXHR) {
 
                 var $userInfoBodys = $nnamecustomer.find("#namecustomer");
-                $userInfoBodys.append($("<input id='customersname' style='display: none' value='"+ data.username +"'>"));
+                $userInfoBodys.append($("<input id='customersname' style='display: none' value='" + data.username + "'>"));
                 $nnamecustomer.show();
 
-                }
+            }
         });
     }
 
@@ -185,8 +184,7 @@ $(function () {
 
         $loggedInBody.append($("<h4>").text("Header.Payload.Verify Signature"));
         $loggedInBody.append($("<div style='padding-bottom: 3em'>").text(jwtToken).css("word-break", "break-all"));
-        $loggedInBody.append($("<a style='margin-top: 2em; color: red' href='https://jwt.io/'>").text("?"));
-      //  $loggedInBody.append($("<h4>").text("Token claims"));
+        //  $loggedInBody.append($("<h4>").text("Token claims"));
 
         var $table = $("<table>")
             .addClass("table table-striped");
@@ -195,7 +193,7 @@ $(function () {
         appendKeyValue($table, "iat", decodedToken.iat);
         appendKeyValue($table, "exp", decodedToken.exp);
 
-      //  $loggedInBody.append($table);
+        //  $loggedInBody.append($table);
 
         $loggedIn.show();
     }
@@ -207,11 +205,13 @@ $(function () {
         $table.append($row);
     }
 
+
     function showResponse(statusCode, message) {
         $response
             .empty()
-            .text("status code: " + statusCode + "\n-------------------------\n" + message);
+            .text(message);
     }
+
 
 
     $("#loginForm").submit(function (event) {
@@ -226,7 +226,7 @@ $(function () {
         doLogin(formData);
     });
 
-    $("#logoutButton").click(doLogout);
+    $($logout).click(doLogout);
 
     $("#exampleServiceBtn").click(function () {
         $.ajax({
@@ -243,6 +243,7 @@ $(function () {
             }
         });
     });
+
 
     $("#adminServiceBtn").click(function () {
         $.ajax({
@@ -269,6 +270,7 @@ $(function () {
         $login.hide();
         $notLoggedIn.hide();
         $loginbefor.hide();
+        $logout.show();
         showTokenInformation();
         showUserInformation();
         showUserInformationNavmain();

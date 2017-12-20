@@ -33,12 +33,6 @@ public class HomeController {
     }
 
 
-    @RequestMapping("/customer/signup")
-    public String signup(Model model) {
-        return "customer/signup";
-
-    }
-
     @RequestMapping("/*")
     public String fourzerofour(Model model) {
         return "error/error";
@@ -97,7 +91,13 @@ public class HomeController {
 
     @RequestMapping("/customer/signin")
     public String signin(Model model) {
-        return "customer/signin";
+        return "customer/login";
+
+    }
+
+    @RequestMapping("/customer/signup")
+    public String signup(Model model) {
+        return "customer/signup";
 
     }
 
