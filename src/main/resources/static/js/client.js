@@ -60,6 +60,7 @@ $(function () {
                 getUsername();
                 $dashboard.show();
                 $addordercoverbef.hide();
+                showAdminservice();
                 window.location.replace("/mazus");
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -248,7 +249,7 @@ $(function () {
     $("#removeItems").click(function () {
 
         $.ajax({
-            url: "http://localhost:8080/ordered/"+ parseInt($('#sttproduct').val()), //note here: A text input's value attribute will always return a string, so your have to...
+            url: "http://localhost:8080/ordered/"+ parseInt($('#sttproduct').val()),     //note here: A text input's value attribute will always return a string, so your have to...
             type: "DELETE",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -257,7 +258,7 @@ $(function () {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 showResponse(jqXHR.status, errorThrown);
-                location.reload();
+
             }
         });
     });
@@ -332,8 +333,25 @@ $(function () {
         });
     });
 
+    //
+    // $("#adminServiceBtn").click(function () {
+    //     $.ajax({
+    //         url: "/protected",
+    //         type: "GET",
+    //         contentType: "application/json; charset=utf-8",
+    //         headers: createAuthorizationTokenHeader(),
+    //         success: function (data, textStatus, jqXHR) {
+    //             showResponse(jqXHR.status, data);
+    //         },
+    //         error: function (jqXHR, textStatus, errorThrown) {
+    //             showResponse(jqXHR.status, errorThrown);
+    //         }
+    //     });
+    // });
 
-    $("#adminServiceBtn").click(function () {
+
+
+    function showAdminservice() {
         $.ajax({
             url: "/protected",
             type: "GET",
@@ -346,7 +364,7 @@ $(function () {
                 showResponse(jqXHR.status, errorThrown);
             }
         });
-    });
+    }
 
     $loggedIn.click(function () {
         $loggedIn
@@ -362,6 +380,7 @@ $(function () {
         showTokenInformation();
         showUserInformation();
         showUserInformationNavmain();
+        showAdminservice();
 
         CartButton();
         getUsername();
