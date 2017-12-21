@@ -2,7 +2,9 @@ package com.mazuz.controller;
 
 
 
+import com.mazuz.domain.Gifts;
 import com.mazuz.domain.Ordered;
+import com.mazuz.service.GiftsService;
 import com.mazuz.service.OrderedService;
 import com.mazuz.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     private ProductService productService;
-
     private OrderedService orderedService;
+    private GiftsService giftsService;
 
     @Autowired
-    public HomeController(ProductService productService, OrderedService orderedService) {
+    public HomeController(ProductService productService, OrderedService orderedService, GiftsService giftsService) {
         super();
         this.productService = productService;
         this.orderedService = orderedService;
+        this.giftsService = giftsService;
+
     }
 
 
@@ -136,6 +140,12 @@ public class HomeController {
     public String views(@PathVariable(value = "url") String url, Model model) {
         model.addAttribute("product", productService.getByUrl(url));
         return "customer/order";
+    }
+
+    @RequestMapping("/gifts/collections/to-gift-is-good/{url}")
+    public String viewgifts(@PathVariable(value = "url") String url, Model model) {
+        model.addAttribute("product", giftsService.getByUrl(url));
+        return "items/gifts";
     }
 
     @RequestMapping("/testsigin")

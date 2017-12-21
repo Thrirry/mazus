@@ -57,15 +57,15 @@ public class GiftsService {
             new Gifts("1", "exclusive", "Luminizer X Quad" , "", "$40", "", "Luminizer-X-Quad", "http://localhost:8080/image/gift/gift1.jpg" ),
             new Gifts("2", "", "Faro Mug Coffee Service Set" , "", "$202", "", "Faro-Mug-Coffee-Service-Set", "http://localhost:8080/image/gift/gift2.jpg" ),
             new Gifts("3","", "2018 Year Task Planner in Copper" , "", "$20", "", "2018-Year-Task-Planner-in-Copper", "http://localhost:8080/image/gift/gift3.jpg" ),
-            new Gifts("4","exclusive", "Northern Lights Socks" , "", "", "$100", "Northern-Lights-Socks", "http://localhost:8080/image/gift/gift4.jpg" ),
+            new Gifts("4","exclusive", "Northern Lights Socks" , "", "$100", "", "Northern-Lights-Socks", "http://localhost:8080/image/gift/gift4.jpg" ),
             new Gifts("5","", "Hairsheep Cashmere Gloves in Camel" , "", "$23", "", "Hairsheep-Cashmere-Gloves-in-Camel", "http://localhost:8080/image/gift/gift5.jpg" ),
-            new Gifts("6","", "The Vices Votive Set" , "", "", "$99", "The-Vices-Votive-Set", "http://localhost:8080/image/gift/gift6.jpg" ),
-            new Gifts("7","back-in-stock", "Silver Lining 17oz. Bottle" , "", "", "$99", "Silver-Lining-17oz.-Bottle", "http://localhost:8080/image/gift/gift7.jpg" ),
+            new Gifts("6","", "The Vices Votive Set" , "", "$99", "", "The-Vices-Votive-Set", "http://localhost:8080/image/gift/gift6.jpg" ),
+            new Gifts("7","back-in-stock", "Silver Lining 17oz. Bottle" , "", "$99", "", "Silver-Lining-17oz.-Bottle", "http://localhost:8080/image/gift/gift7.jpg" ),
             new Gifts("8","", "Octahedron Ring Planter Short" , "", "$101", "", "Octahedron-Ring-Planter-Short", "http://localhost:8080/image/gift/gift8.jpg" ),
             new Gifts("9","", "Sock / Forty-Eight in White" , "", "$98", "", "Sock-Forty-Eight-in-White", "http://localhost:8080/image/gift/gift9.jpg" ),
             new Gifts("10","back-in-stock", "Skin Rescue Essentials Kit" , "", "$70", "", "Skin-Rescue-Essentials-Kit", "http://localhost:8080/image/gift/gift10.jpg" ),
-            new Gifts("11","", "Nep Rib 3-Pack Crew" , "", "", "$65", "Nep-Rib-3-Pack-Crew", "http://localhost:8080/image/gift/gift11.jpg" ),
-            new Gifts("12","back-in-stock", "Perception Set" , "", "", "$33", "Perception-Set", "http://localhost:8080/image/gift/gift12.jpg" )
+            new Gifts("11","", "Nep Rib 3-Pack Crew" , "", "$65", "", "Nep-Rib-3-Pack-Crew", "http://localhost:8080/image/gift/gift11.jpg" ),
+            new Gifts("12","back-in-stock", "Perception Set" , "", "$60", "", "Perception-Set", "http://localhost:8080/image/gift/gift12.jpg" )
 
     ));
 
@@ -94,5 +94,9 @@ public class GiftsService {
 
     public void deleteGifts(String id) {
         giftsRepository.delete(id);
+    }
+
+    public Gifts getByUrl(String url) {
+        return giftsRepository.findByUrl(url);
     }
 }

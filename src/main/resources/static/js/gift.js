@@ -13,7 +13,7 @@ $(function () {
 
                     '<div class="image">' +
 
-                    '<a class="image-link" href="#" title="'+ showgifts.name + '">' +
+                    '<a class="image-link" href="/gifts/collections/to-gift-is-good/'+showgifts.url+'" title="'+ showgifts.name + '">' +
 
                     '<img src="'+ showgifts.img +'" alt="'+ showgifts.name +'"/></a>' +
 
@@ -27,7 +27,7 @@ $(function () {
                     '<a href="'+ showgifts.url +'" title="'+ showgifts.name +'">' + showgifts.details + '</a>' +
                     '</h3>' +
 
-                    '<h4 style="font-size: 13px" class="brand-price">' + showgifts.name + '<span class="price">' + showgifts.price + '</span>' + '</h4>'
+                    '<h4 style="font-size: 13px" class="brand-price">' + showgifts.name + '<br><br>' + '<span class="price">' + showgifts.price + '</span>' + '</h4>'
 
                     + '<a class="quick-view" href="#" title="'+ showgifts.name +'" data-id="244601"></a>' +
                     '</div>'

@@ -5,7 +5,7 @@
       xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 
-    <title th:text="|Mazus - ${product.details}|"></title>
+    <title th:text="|Mazus - ${product.name}|"></title>
 
     <link rel="stylesheet" href="../../static/css/product.css" th:href="@{/css/product.css}"/>
     <link rel="stylesheet" href="../../static/css/aurora-pack.min.css" th:href="@{/css/aurora-pack.min.css}"/>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
     <link rel="stylesheet" href="../../static/css/aurora-button.css" th:href="@{/css/aurora-button.css}"/>
     <link rel="icon" type="image/svg" href="../../static/image/urku-ico.svg" th:href="@{/css/urku-ico.svg}"/>
+    <base id="myBase" href="http://localhost:8080/"/>
     <style type="text/css">
         h3{
             font-size: 17px;
@@ -49,7 +50,7 @@
                                             <li><a href="#"><img src="../image/hp_nc_06.jpg" alt=""/></a></li>
                                         </ul>
                                         <div class="product-image">
-                                            <img id="product-image" th:src="${product.imgsecond}"
+                                            <img id="product-image" th:src="${product.img}"
                                                  alt="Darkness of My Heart Tote Bag"/>
                                             <div class="enlarge"><a href="#"></a></div>
                                         </div>
@@ -75,8 +76,8 @@
                                             </ul>
                                         </div>
                                         <h2 class="product-brand"><a href="/mens/brands/need">NEED</a></h2>
-                                        <h1 class="product-name" th:value="${product.details}"
-                                            th:text="${product.details}"></h1>
+                                        <h1 class="product-name" th:value="${product.name}"
+                                            th:text="${product.name}"></h1>
                                         <div class="product-price">
                                             <h3><span class="price" th:text="${product.price}"></span></h3>
                                         </div>
@@ -118,7 +119,7 @@
                                                 Details</a>
                                             <p><strong>Free Shipping Returns</strong> <br/>Orders Over $100</p>
                                         </div>
-                                        <div class="product-buttons-secondary clearfix">
+                                        <div class="product-buttons-secondary cl    earfix">
                                             <div class="wishlist-wrapper">
                                                 <a href="#" class="link-wishlist wishlist">Add to Wishlist</a>
                                             </div>
@@ -137,7 +138,7 @@
                                             <a class="accordion-label" href="#"
                                                data-target="description">Description</a>
                                             <div style='font-size: 13px; padding-bottom: 2em'
-                                                 th:text="${product.content}"></div>
+                                                 th:text="${product.details}"></div>
 
                                             <a class="rates-international" href="/help/#international">View
                                                 International Rates</a>
@@ -243,9 +244,9 @@
                     };
                     $.ajax(settings).done(function (response) {
 
-                            var $userInfoBodys = $messages.find("#message-body");
-                            $userInfoBodys.append($("<p>\Order finished, Check your cart\</p>"));
-                            $messages.show();
+                        var $userInfoBodys = $messages.find("#message-body");
+                        $userInfoBodys.append($("<p>\Order finished, Check your cart\</p>"));
+                        $messages.show();
 
                     });
                 });
