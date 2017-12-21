@@ -75,6 +75,12 @@ public class HomeController {
 
     }
 
+    @RequestMapping("/gifts/collections/to-gift-is-good")
+    public String gift(Model model) {
+        return "navbar/gift";
+
+    }
+
     @RequestMapping("/pages/design")
     public String pagesDes(Model model) {
         return "pages/design";

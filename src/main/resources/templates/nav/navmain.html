@@ -84,6 +84,12 @@
                         </ul>
                     </nav>
                 </li>
+
+                <li class="rk-menu__item"
+                    th:classappend="${#httpServletRequest.getRequestURI() == '/gifts/collections/to-gift-is-good' ? 'active':''}"><a
+                        th:href="@{/gifts/collections/to-gift-is-good}" class="rk-menu__link">Gift</a>
+                </li>
+
                 <li class="rk-menu__item"
                     th:classappend="${#httpServletRequest.getRequestURI() == '/pages/documentation' ? 'active':''}"><a
                         th:href="@{/pages/documentation}" class="rk-menu__link">Pages</a>
