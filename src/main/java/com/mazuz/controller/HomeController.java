@@ -112,6 +112,12 @@ public class HomeController {
 
     }
 
+    @RequestMapping("/your/dashboard")
+    public String yourdashboard(Model model) {
+        return "your/dashboard";
+
+    }
+
     @RequestMapping("/mazus/{url}")
     public String view(@PathVariable(value = "url") String url, Model model) {
         model.addAttribute("product", productService.getByUrl(url));

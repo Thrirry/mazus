@@ -11,7 +11,7 @@
           th:href="@{/css/aurora-theme-base.min.css}"/>
     <link rel="stylesheet" href="../../static/css/urku.css" th:href="@{/css/urku.css}"/>
     <link rel="stylesheet" href="../../static/css/aurora-button.css" th:href="@{/css/aurora-button.css}"/>
-    <link rel="icon" type="image/svg" href="../../image/logo.svg" th:href="@{/image/logo.svg}"/>
+    <link rel="icon" type="image/svg" href="../../static/image/logo.svg" th:href="@{/static/image/logo.svg}"/>
 
 </head>
 <body>
@@ -30,7 +30,7 @@
     </label>
     <div class="ae-container-fluid rk-topbar">
         <!-- <h1 class="rk-logo"><a href="#">DU Portfolio<sup>tm</sup></a></h1> -->
-        <h1 class="rk-logo"><img style="height: 2em" src="image/makecode.svg" alt=""/></h1>
+        <h1 class="rk-logo"><img style="height: 2em" src="../image/makecode.svg" alt=""/></h1>
 
         <nav class="rk-navigation">
             <ul class="rk-menu">
@@ -117,7 +117,7 @@
                         <ul class="rk-container">
                             <li class="rk-menu__item"
                                 th:classappend="${#httpServletRequest.getRequestURI() == '/checkout/cart' ? 'active':''}">
-                                <a th:href="@{/checkout/cart}" class="rk-menu__link">My Dashboard</a></li>
+                                <a th:href="@{/checkout/cart}" class="rk-menu__link">My Cart</a></li>
                             <li class="rk-menu__item"
                                 th:classappend="${#httpServletRequest.getRequestURI() == '/customer/myorders' ? 'active':''}">
                                 <a th:href="@{/customer/myorders}" class="rk-menu__link">My Orders</a></li>
@@ -128,12 +128,11 @@
                             <li id="loginbefor" class="rk-menu__item"
                                 th:classappend="${#httpServletRequest.getRequestURI() == '/customer/login' ? 'active':''}">
                                 <a th:href="@{/customer/signin}" class="rk-menu__link">Log In</a>
-
                             </li>
 
                             <li class="rk-menu__item"
-                                th:classappend="${#httpServletRequest.getRequestURI() == '/customer/login' ? 'active':''}">
-                                <a th:href="@{/customer/dashboard}" class="rk-menu__link">
+                                th:classappend="${#httpServletRequest.getRequestURI() == '/your/dashboard' ? 'active':''}">
+                                <a th:href="@{/your/dashboard}" class="rk-menu__link">
                                     <div id="userInfow">
                                         <div id="userlogged">
                                         </div>

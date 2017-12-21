@@ -14,6 +14,7 @@ $(function () {
     var $logout = $("#logout").hide();
 
     var $showCart = $('#showCart');
+    $showCart.hide();
 
     $dashboard.hide();
 
@@ -23,6 +24,8 @@ $(function () {
     $addordercover.hide();
 
     var $nnamecustomer = $('#nnamecustomer');
+    var $mainusername = $('#mainusername');
+    var $mainadd = $('#mainadd');
 
 
     function getJwtToken() {
@@ -135,8 +138,29 @@ $(function () {
             headers: createAuthorizationTokenHeader(),
             success: function (data, textStatus, jqXHR) {
                 var $userInfoBodys = $userInfow.find("#userlogged");
+                //var $usernames = $userInfow.find("#username");
 
                 $userInfoBodys.append($("<p>").text("Hi, " + data.username));
+                //$usernames.append($("<h2>").text("Hi, " + data.username));
+                $userInfow.show();
+
+            }
+        });
+    }
+
+    function showUserInformationDashboard() {
+        $.ajax({
+            url: "/user",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            headers: createAuthorizationTokenHeader(),
+            success: function (data, textStatus, jqXHR) {
+                //var $userInfoBodys = $userInfow.find("#userlogged");
+                var $username = $userInfow.find("#username");
+
+                //$userInfoBodys.append($("<p>").text("Hi, " + data.username));
+                $username.append($("<h2>").text("Hi, " + data.username));
                 $userInfow.show();
 
             }
@@ -176,14 +200,22 @@ $(function () {
                 $nnamecustomer.show();
                 showCart(data.username)
 
+                var $mainusernames = $mainusername.find("#username");
+                $mainusernames.append($("<h2>").text("Hi, " + data.username));
+                $mainusernames.show();
+
+                var $mainadress = $mainadd.find("#mainaddsecond");
+                $mainadress.append($("<p>").text("Email Adress:  " + data.email));
+                $mainadress.show();
+
             }
         });
     }
 
+    //for checkout/cart
     function showCart(datas) {
 
         var $nameCustomer = datas;
-        $showCart.hide();
 
         $.ajax({
             url: "http://localhost:8080/ordered/"+ $nameCustomer,
@@ -196,18 +228,40 @@ $(function () {
                 var title = "";
                 var price = "";
                 var Subprice = "";
+                var stt = "";
 
                 title += '<a>' + data.nameproduct + '</a>';
                 price += '<span class="price">'+ data.price + '</span>';
                 Subprice += '<span class="price">'+ data.price + '</span>';
+                stt += '<input id="sttproduct" style="display: none" value=' + data.stt + ' />';
+
 
                 document.getElementById("title").innerHTML = title;
                 document.getElementById("price").innerHTML = price;
                 document.getElementById("Subprice").innerHTML = Subprice;
+                document.getElementById("sttproducts").innerHTML = stt;
 
             }
         });
     }
+
+    $("#removeItems").click(function () {
+
+        $.ajax({
+            url: "http://localhost:8080/ordered/"+ parseInt($('#sttproduct').val()), //note here: A text input's value attribute will always return a string, so your have to...
+            type: "DELETE",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data, textStatus, jqXHR) {
+                location.reload();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                showResponse(jqXHR.status, errorThrown);
+                location.reload();
+            }
+        });
+    });
+
 
 
 
