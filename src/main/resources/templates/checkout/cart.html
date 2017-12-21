@@ -34,68 +34,61 @@
             </ul>
         </div>
 
-          <!--  <input name="form_key" type="hidden" value="NvbVLeRliQeJjmlF"/>-->
-            <div id="sttproducts" style="display: none;"></div>
-            <fieldset>
-                <table id="shopping-cart-table" class="data-table cart-table">
-                    <thead>
-                    <tr class="first last">
-                        <th class="image" rowspan="1">Item</th>
-                        <th class="product-name" rowspan="1">&nbsp;</th>
-                        <th rowspan="1">Edit</th>
-                        <th rowspan="1">Quantity</th>
-                        <th class="subtotal a-center" colspan="1">Subtotal</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr class="first last">
-                        <td colspan="50" class="a-right last">
-                            <button type="submit" name="update_cart_action" value="update_qty"
-                                    title="Update Shopping Cart"
-                                    class="button btn-update"><span><span>Update Shopping Cart</span></span></button>
-                        </td>
-                    </tr>
-                    </tfoot>
+        <!--  <input name="form_key" type="hidden" value="NvbVLeRliQeJjmlF"/>-->
+        <div id="sttproducts" style="display: none;"></div>
+        <fieldset id="showCart">
+            <table id="shopping-cart-table" class="data-table cart-table">
+                <thead>
+                <tr class="first last">
+                    <th class="image" rowspan="1">Item</th>
+                    <th class="product-name" rowspan="1">&nbsp;</th>
+                    <th rowspan="1">Edit</th>
+                    <th rowspan="1">Quantity</th>
+                    <th class="subtotal a-center" colspan="1">Subtotal</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr class="first last">
+                    <td colspan="50" class="a-right last">
+                        <button type="submit" name="update_cart_action" value="update_qty"
+                                title="Update Shopping Cart"
+                                class="button btn-update"><span><span>Update Shopping Cart</span></span></button>
+                    </td>
+                </tr>
+                </tfoot>
 
-                    <tbody id="showCart">
+                <tbody>
 
-                    <tr class="first last odd">
-                        <td class="image">
-                            <a href="#" title="Balancing Blocks" class="cart-product-image">
+                <tr class="first last odd">
+                    <td class="image">
+                        <a href="#" title="Balancing Blocks" class="cart-product-image">
                             <img src="../image/hp_nc_03.jpg" width="100" alt="Balancing Blocks"/></a></td>
-                        <td class="product-name">
-                            <h2 id="title" class="product-name">
-                               <!-- <a href="#">Balancing Blocks</a>-->
-                            </h2>
-                            <dl class="item-options specs">
-                             <dt>Price</dt>
-                            </dl>
+                    <td class="product-name">
+                        <h2 id="title" class="product-name">
+                            <!-- <a href="#">Balancing Blocks</a>-->
+                        </h2>
+                        <dl class="item-options specs">
+                            <dt>Price</dt>
+                        </dl>
 
-                            <dl class="item-options">
+                        <dl class="item-options">
 
-                                <dt>
+                            <dt>
 								<span id="price" class="cart-price">
-
 									<!--<span class="price">$48.00</span>-->
 								</span>
 
-                                    <span id="testshow" class="cart-price">
+                            </dt>
 
-									<!--<span class="price">$48.00</span>-->
-								</span>
-                                </dt>
+                        </dl>
 
-                            </dl>
-
-                        </td>
-                        <td class="cart-remove-item">
-                            <button id="removeItems" style="border: none">
+                    </td>
+                    <td class="cart-remove-item">
+                        <button id="removeItems" style="border: none">
                             Remove from Cart
-                            </button>
-                        </td>
-
-
-                        <td>
+                        </button>
+                    </td>
+                    <td>
 							<span class="cart-quantity">
 								<span class="mobile-label">Quantity: </span>
 								<span class="quantity quantity-stepper enabled">
@@ -105,29 +98,28 @@
 									<button data-type="plus"><img src="../image/icon-plus.svg"/></button>
 								</span>
 							</span>
-                        </td>
-                        <td class="subtotal a-right last">
+                    </td>
+                    <td class="subtotal a-right last">
 							<span id="Subprice" class="cart-price"><span class="mobile-label">Subtotal: </span>
 
 
 						</span>
-                            <span class="mobile-remove"><a href="#" title="Remove item" class="link-remove">
+                        <span class="mobile-remove"><a href="#" title="Remove item" class="link-remove">
                             <img src="../image/icon-close-white.svg"/></a></span>
-                        </td>
-                    </tr>
+                    </td>
+                </tr>
+                </tbody>
 
+            </table>
+        </fieldset>
 
-                    </tbody>
-
-
-                </table>
-            </fieldset>
-            <div class="shipping-promo"></div>
-
-
+        <a id="statusItems" style="margin-left: 10px">
+            You have no items in your shopping cart
+        </a>
+        <div class="shipping-promo"></div>
 
         <div class="continue-shopping">
-            <button type="button" title="Continue Shopping" class="button btn-continue">
+            <button id="redirect_toProduct" type="button" title="Continue Shopping" class="button btn-continue">
                 <span style="margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;"><span>Continue Shopping</span></span>
             </button>
         </div>

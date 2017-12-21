@@ -296,7 +296,7 @@ form, input, textarea, select, button {
 
 
 .product-messaging {
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.4em;
     margin: 20px 0 36px 0;
     padding-top: 3em;
@@ -445,7 +445,7 @@ form, input, textarea, select, button {
 .product-additional .accordion-label {
     color: #111;
     display: block;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1em;
     margin-bottom: 8px;
     padding: 0 0 10px 0;

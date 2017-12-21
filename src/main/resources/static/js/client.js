@@ -27,6 +27,8 @@ $(function () {
     var $mainusername = $('#mainusername');
     var $mainadd = $('#mainadd');
 
+    var $statusItems = $('#statusItems');
+
 
     function getJwtToken() {
         return localStorage.getItem(TOKEN_KEY);
@@ -225,6 +227,7 @@ $(function () {
             dataType: "json",
             success: function (data, textStatus, jqXHR) {
                 $showCart.show();
+                $statusItems.hide();
 
                 var title = "";
                 var price = "";
@@ -245,11 +248,11 @@ $(function () {
             }
         });
     }
-
+    //note here: A text input's value attribute will always return a string, so your have to...
     $("#removeItems").click(function () {
 
         $.ajax({
-            url: "http://localhost:8080/ordered/"+ parseInt($('#sttproduct').val()),     //note here: A text input's value attribute will always return a string, so your have to...
+            url: "http://localhost:8080/ordered/"+ parseInt($('#sttproduct').val()),
             type: "DELETE",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -258,6 +261,7 @@ $(function () {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 showResponse(jqXHR.status, errorThrown);
+                location.reload();
 
             }
         });
@@ -365,6 +369,10 @@ $(function () {
             }
         });
     }
+
+    $('#redirect_toProduct').click(function () {
+        window.location.href = "/mazus";
+    });
 
     $loggedIn.click(function () {
         $loggedIn

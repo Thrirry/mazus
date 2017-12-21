@@ -106,7 +106,7 @@
                                         <div>
                                         </div>
 
-                                        <div class="product-messaging">
+                                        <div class="product-messaging" style="margin-top: -3em">
                                             <a class="product-messaging-details" href="/help/#rates" target="_blank">See
                                                 Details</a>
                                             <p><strong>Free Shipping Returns</strong> <br/>Orders Over $100</p>
@@ -237,7 +237,7 @@
                     $.ajax(settings).done(function (response) {
 
                             var $userInfoBodys = $messages.find("#message-body");
-                            $userInfoBodys.append($("<p>\Order finished! Check your Cart\</p>"));
+                            $userInfoBodys.append($("<p>\Order finished, Check your cart\</p>"));
                             $messages.show();
 
                     });
