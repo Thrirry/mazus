@@ -11,6 +11,7 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block;
 }
+
 .gift-guide-header {
     margin-bottom: 20px;
 }
@@ -30,9 +31,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     padding: 40px 0 30px 0;
     margin: 0;
 }
+
 .holiday-2017-collection-header .header-text {
     padding: 30px 0 0 0;
 }
+
 .holiday-2017-collection-header .header-text h2 {
     font-size: 20px;
     display: inline-block;
@@ -46,6 +49,7 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
     font-size: 58px;
     margin: 20px 0;
 }
+
 .holiday-2017-collection-header .header-text p {
     font-size: 22px;
     width: 52%;
@@ -62,10 +66,11 @@ body.gifts .toolbar-container, body.gifts-collection .toolbar-container {
 }
 
 .toolbar .toolbar-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
-@media (min-width: 1480px){
+
+@media (min-width: 1480px) {
     .container, .col2-left-layout, .account-login, .newsletter-banner-container {
         width: 1440px;
     }
@@ -76,9 +81,11 @@ body.gifts .toolbar-container, body.gifts-collection .toolbar-container {
     max-width: 1440px;
     width: 1200px;
 }
+
 .toolbar .row {
     overflow: hidden;
 }
+
 .toolbar .filter-menu-buttons-placeholder {
     box-sizing: border-box;
     display: block;
@@ -97,16 +104,18 @@ body.gifts .toolbar-container, body.gifts-collection .toolbar-container {
     text-align: center;
     width: 60%;
 }
+
 ol, ul {
     list-style: none;
 }
-.toolbar .breadcrumbs ul>li:first-child {
+
+.toolbar .breadcrumbs ul > li:first-child {
     display: none;
 }
+
 .toolbar .breadcrumbs li {
     display: inline-block;
 }
-
 
 .toolbar .breadcrumbs a, .toolbar .breadcrumbs strong {
     color: #111;
@@ -130,6 +139,7 @@ a {
     display: inline-block;
     margin-left: 4px;
 }
+
 .toolbar .pagination a.active {
     text-decoration: underline;
 }
@@ -141,6 +151,7 @@ a {
 .toolbar .pagination a:hover, .toolbar .pagination a.active {
     text-decoration: underline;
 }
+
 .toolbar .mobile-pager {
     color: #999;
     display: none;
@@ -150,6 +161,7 @@ a {
     padding: 0;
     list-style: none;
 }
+
 .toolbar .mobile-pager li {
     display: inline;
 }
@@ -163,7 +175,8 @@ a {
 #category .container, #category .col2-left-layout, #category .account-login, #category .newsletter-banner-container {
     position: relative;
 }
-@media (min-width: 1480px){
+
+@media (min-width: 1480px) {
     .container, .col2-left-layout, .account-login, .newsletter-banner-container {
         width: 1440px;
     }
@@ -178,6 +191,7 @@ a {
 body.gifts .product-list-nav, body.gifts-collection .product-list-nav {
     display: none !important;
 }
+
 .product-list-nav {
     box-sizing: border-box;
     float: left;
@@ -186,6 +200,7 @@ body.gifts .product-list-nav, body.gifts-collection .product-list-nav {
     position: relative;
     width: 20% !important;
 }
+
 .nav {
     float: left;
     font-size: 12px;
@@ -199,6 +214,7 @@ body.gifts .product-list-nav, body.gifts-collection .product-list-nav {
     text-transform: none;
     width: 100%;
 }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block;
 }
@@ -212,13 +228,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     line-height: 1.3em;
     margin-bottom: 30px;
 }
+
 .nav li {
     border: 0;
     display: block;
 }
-.nav li:first-child>a {
+
+.nav li:first-child > a {
     padding-top: 0;
 }
+
 .nav a {
     color: #999;
     display: block;
@@ -226,12 +245,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     padding: 6px 0 0 0;
     text-decoration: none;
 }
+
 .product-list-grid {
     float: left;
     margin-bottom: 20px;
 
 }
-
 
 #category article.promo:nth-of-type(4n+1), #category article.product:nth-of-type(4n+1) {
     clear: left;
@@ -274,7 +293,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     display: none;
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx){
+@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
+    #category article.product .image .exclusive {
+        background-image: url(../image/badge_exclusive@2x.png);
+    }
+}
+
+#category article.product .image .exclusive {
+    background: url(../image/badge_exclusive.png) left bottom no-repeat;
+    background-size: 46px 46px;
+}
+
+#category article.product .image .badge {
+    cursor: pointer;
+    display: block;
+    height: 46px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 46px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
     #category article.product .image .back-in-stock {
         background-image: url(../image/badge_backinstock@2x.png);
     }
@@ -294,9 +334,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
     top: 0;
     width: 46px;
 }
+
 #category article.product .detail {
     position: relative;
 }
+
 #category article.product h3 {
     color: #333;
     line-height: 1.2em;
@@ -310,6 +352,7 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
 #category article.product h3 a {
     color: #333;
 }
+
 #category article.product h4 {
     line-height: 1.2em;
     margin-top: 6px;
@@ -326,6 +369,7 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
     width: 27px;
     z-index: 1;
 }
+
 .toolbar-bottom {
     border-top: 1px solid #ededed;
     clear: left;
@@ -336,7 +380,8 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
 #category .container, #category .col2-left-layout, #category .account-login, #category .newsletter-banner-container {
     position: relative;
 }
-@media (min-width: 1480px){
+
+@media (min-width: 1480px) {
     .container, .col2-left-layout, .account-login, .newsletter-banner-container {
         width: 1440px;
     }
@@ -347,6 +392,7 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
     max-width: 1440px;
     width: 1200px;
 }
+
 .toolbar-bottom .row {
     position: relative;
 }
@@ -355,18 +401,19 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
     overflow: hidden;
 }
 
-
 .toolbar-bottom .next-page {
     background: url(../image/icon-caret-black-right.svg) right center no-repeat;
     float: right;
     height: 22px;
     line-height: 22px;
     margin-right: 10px;
-    padding: 15px 40px 15px 0;
+    /*padding: 15px 40px 15px 0;*/
     position: absolute;
     right: 0;
     top: 0;
     background-size: 13px;
+    padding-right: 30px;
+    margin-top: 1.6em;
 }
 
 .toolbar-bottom a {
@@ -376,6 +423,7 @@ h1, h2, h3, h4, h5, h6, strong, b, th {
 .toolbar-bottom .pagination {
     text-align: center;
 }
+
 .toolbar-bottom .pagination li {
     display: inline-block;
     line-height: 22px;
