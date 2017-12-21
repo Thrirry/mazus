@@ -17,7 +17,7 @@ $(function () {
 
                     '<img src="'+ showgifts.img +'" alt="'+ showgifts.name +'"/></a>' +
 
-                    '<a class="badge back-in-stock" href="' + showgifts.url +'"></a>' +
+                    '<a class="badge '+showgifts.namestock+'" href="' + showgifts.url +'"></a>' +
                     '</div>' +
 
                     '<div class="detail">' +
