@@ -90,7 +90,7 @@
                                         </div>
 
                                         <div style="text-align: center; font-size: 16px; margin-top: 6em;" id="messages">
-                                            <a href="/customer/dashboard" id="message-body"></a>
+                                            <a href="/checkout/cart" id="message-body"></a>
                                         </div>
 
 
@@ -203,7 +203,9 @@
             </div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <th:block layout:fragment="script">
+            <script th:src="@{js/jquery.min.js}"></script>
+        </th:block>
 
 
         <script language="JavaScript" type="text/javascript">
