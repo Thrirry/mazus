@@ -127,11 +127,10 @@
 			<version>1.4.196</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>exec-maven-plugin</artifactId>
-			<version>1.6.0</version>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
 
@@ -139,31 +138,6 @@
 
 	<build>
 		<plugins>
-
-
-
-			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>2.0.2</version>
-
-				<configuration>
-					<processTypes>
-						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-					</processTypes>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin>
-
-
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -206,10 +180,7 @@
 
 					<serverId>docker-hub</serverId>
 					<registryUrl>https://index.docker.io/v1/</registryUrl>
-
 				</configuration>
-
-
 			</plugin>
 
 
@@ -224,8 +195,6 @@
 			</activation>
 			<build>
 				<plugins>
-
-
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>findbugs-maven-plugin</artifactId>
@@ -236,18 +205,11 @@
 						<executions>
 							<execution>
 								<phase>compile</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
 							</execution>
 						</executions>
-					</plugin>
-
-
-
-					<plugin>
-						<groupId>com.heroku.sdk</groupId>
-						<artifactId>heroku-maven-plugin</artifactId>
-						<configuration>
-							<appName>mazuz</appName>
-						</configuration>
 					</plugin>
 
 
@@ -294,13 +256,6 @@
 						</executions>
 					</plugin>
 
-					<plugin>
-						<groupId>com.heroku.sdk</groupId>
-						<artifactId>heroku-maven-plugin</artifactId>
-						<configuration>
-							<appName>mazuz</appName>
-						</configuration>
-					</plugin>
 				</plugins>
 			</build>
 		</profile>
